@@ -1,7 +1,7 @@
 import React, { useRef, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Zap, Linkedin, Twitter, Youtube } from 'lucide-react';
+import { ArrowUp, Mail, Phone, MapPin, Zap, Linkedin, Twitter, Youtube } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import * as THREE from 'three';
 import { Logo } from '../common/Logo';
@@ -86,6 +86,14 @@ const driftingTags = [
 ];
 
 export function FooterMascotSection() {
+  const scrollToTop = () => {
+    try {
+      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+      document.documentElement.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    } catch (e) {
+      window.scrollTo(0, 0);
+    }
+  };
   return (
     <footer className="relative bg-[#050507] pt-24 pb-12 border-t border-white/10 overflow-hidden text-slate-300">
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-gradient-to-t from-[#7B61FF]/10 to-[#FF6B00]/10 blur-[180px] pointer-events-none" />
@@ -224,6 +232,14 @@ export function FooterMascotSection() {
           <div>
             © {new Date().getFullYear()} Inovaantage. All rights reserved. Built with precision for global infrastructure.
           </div>
+
+          <button
+            onClick={scrollToTop}
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-slate-300 hover:text-white hover:border-[#FF6B00]/50 transition-colors cursor-pointer"
+          >
+            <span>BACK TO TOP</span>
+            <ArrowUp className="w-3.5 h-3.5" />
+          </button>
         </div>
       </div>
     </footer>

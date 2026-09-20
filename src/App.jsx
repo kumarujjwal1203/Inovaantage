@@ -8,6 +8,7 @@ import { ScrollProgress } from './components/layout/ScrollProgress';
 import { PageTransition } from './components/layout/PageTransition';
 import { Preloader } from './components/common/Preloader';
 import { CustomCursor } from './components/common/CustomCursor';
+import { BackToTop } from './components/common/BackToTop';
 import { BackgroundSystem } from './components/common/BackgroundSystem';
 
 import { Home } from './pages/Home';
@@ -44,6 +45,7 @@ export function App() {
       <ScrollProgress />
       <Preloader />
       <CustomCursor />
+      <BackToTop />
       <ScrollToTop />
 
       {/* Global Navbar */}
