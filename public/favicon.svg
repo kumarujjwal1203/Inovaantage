@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <rect width="100" height="100" rx="24" fill="#080811"/>
+  <!-- Twin Peak Geometric Inovaantage Chevrons -->
+  <path d="M22 70L45 25L68 70" stroke="#FF6B00" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M42 70L65 25L88 70" stroke="#FF8800" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M22 70H48" stroke="#FF6B00" stroke-width="7" stroke-linecap="round"/>
+  <path d="M42 70H68" stroke="#FF8800" stroke-width="7" stroke-linecap="round"/>
+</svg>
