@@ -7,6 +7,7 @@ import { Footer } from './components/layout/Footer';
 import { ScrollProgress } from './components/layout/ScrollProgress';
 import { PageTransition } from './components/layout/PageTransition';
 import { Preloader } from './components/common/Preloader';
+import { CustomCursor } from './components/common/CustomCursor';
 import { BackgroundSystem } from './components/common/BackgroundSystem';
 
 import { Home } from './pages/Home';
@@ -42,6 +43,7 @@ export function App() {
       {/* Global Utilities */}
       <ScrollProgress />
       <Preloader />
+      <CustomCursor />
       <ScrollToTop />
 
       {/* Global Navbar */}
