@@ -125,7 +125,7 @@ export function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-30 bg-[#050507]/95 backdrop-blur-2xl flex flex-col justify-center px-6 sm:px-12 md:hidden"
+            className="fixed inset-0 z-30 bg-[#050507]/95 backdrop-blur-2xl flex flex-col justify-center px-6 sm:px-12 md:hidden overflow-y-auto pt-24 pb-12"
           >
             {/* Subtle background glow */}
             <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-72 h-72 rounded-full bg-[#FF6B00]/15 blur-3xl pointer-events-none" />

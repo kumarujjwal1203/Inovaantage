@@ -138,7 +138,7 @@ export function GlobalReachSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           {/* LEFT COLUMN: SCROLLABLE OFFICE LOCATIONS LIST */}
-          <div className="lg:col-span-5 glass-panel p-4 sm:p-5 rounded-3xl border border-white/15 max-h-[620px] overflow-y-auto space-y-3 custom-scrollbar bg-gradient-to-b from-white/[0.04] to-black/80">
+          <div className="lg:col-span-5 glass-panel p-4 sm:p-5 rounded-3xl border border-white/15 max-h-[380px] sm:max-h-[620px] overflow-y-auto space-y-3 custom-scrollbar bg-gradient-to-b from-white/[0.04] to-black/80">
             {globalOffices.map((office) => {
               const isSelected = selectedOfficeId === office.id;
               return (
@@ -185,7 +185,7 @@ export function GlobalReachSection() {
           </div>
 
           {/* RIGHT COLUMN: INTERACTIVE MAP & SATELLITE PREVIEW CARD */}
-          <div className="lg:col-span-7 glass-panel p-5 rounded-3xl border border-white/15 bg-gradient-to-b from-white/[0.05] via-black/60 to-black/90 shadow-2xl flex flex-col justify-between min-h-[580px] sm:min-h-[620px] relative overflow-hidden">
+          <div className="lg:col-span-7 glass-panel p-4 sm:p-5 rounded-3xl border border-white/15 bg-gradient-to-b from-white/[0.05] via-black/60 to-black/90 shadow-2xl flex flex-col justify-between min-h-[380px] sm:min-h-[620px] relative overflow-hidden">
             
             {/* Header Address & Coordinate Badge Bar */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between p-3.5 rounded-2xl bg-black/70 border border-white/10 mb-4 gap-3">
@@ -232,7 +232,7 @@ export function GlobalReachSection() {
             </div>
 
             {/* Google Maps Frame with Building Address Search Query */}
-            <div className="relative flex-grow rounded-2xl overflow-hidden border border-white/10 bg-black min-h-[420px] sm:min-h-[460px]">
+            <div className="relative flex-grow rounded-2xl overflow-hidden border border-white/10 bg-black min-h-[300px] sm:min-h-[460px]">
               <AnimatePresence mode="wait">
                 <motion.iframe
                   key={selectedOffice.id + '-' + mapMode}

@@ -147,7 +147,7 @@ export function ServicesParticleMorph() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
           {/* LEFT: STICKY 3D PARTICLE MORPH CANVAS (Clean without overlay text) */}
-          <div className="lg:col-span-6 lg:sticky lg:top-28 h-[400px] sm:h-[500px] relative rounded-3xl bg-white/[0.02] border border-white/10 overflow-hidden shadow-2xl">
+          <div className="lg:col-span-6 lg:sticky lg:top-28 h-[280px] sm:h-[450px] lg:h-[500px] relative rounded-3xl bg-white/[0.02] border border-white/10 overflow-hidden shadow-2xl">
             <CanvasErrorBoundary>
               <Canvas camera={{ position: [0, 0, 5], fov: 60 }}>
                 <ambientLight intensity={0.5} />
@@ -203,7 +203,7 @@ export function ServicesParticleMorph() {
                     onMouseEnter={() => setHoveredShape(card.shapeIndex)}
                     onMouseLeave={() => setHoveredShape(null)}
                     whileHover={{ x: 6, transition: { duration: 0.2 } }}
-                    className={`group relative p-6 rounded-2xl border transition-all duration-300 cursor-pointer overflow-hidden ${
+                    className={`group relative p-4 sm:p-6 rounded-2xl border transition-all duration-300 cursor-pointer overflow-hidden ${
                       isCardHighlight
                         ? 'bg-gradient-to-r from-white/[0.05] to-black/80 border-[#FF6B00]/70 shadow-xl shadow-[#FF6B00]/25'
                         : 'bg-white/[0.02] border-white/10 hover:border-white/30 hover:bg-white/[0.04]'

@@ -157,12 +157,12 @@ function HeroStat({ number, label }) {
   }, [inView, target]);
 
   return (
-    <div ref={ref} className="flex flex-col items-center sm:items-start text-center sm:text-left">
-      <div className="text-3xl sm:text-4xl font-extrabold font-heading text-white tracking-tight flex items-center">
+    <div ref={ref} className="flex flex-col items-center text-center">
+      <div className="text-xl sm:text-3xl md:text-4xl font-extrabold font-heading text-white tracking-tight flex items-center">
         <span>{count}</span>
         <span className="text-[#7B61FF]">{suffix}</span>
       </div>
-      <div className="text-xs text-slate-400 font-medium mt-1">{label}</div>
+      <div className="text-[10px] sm:text-xs text-slate-400 font-medium mt-0.5 sm:mt-1">{label}</div>
     </div>
   );
 }
@@ -221,8 +221,8 @@ export function HeroSection() {
       </div>
 
       {/* BOTTOM STATS BAR POSITIONED SLIGHTLY HIGHER FOR ABOVE-THE-FOLD VISIBILITY */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-10 sm:mt-14 pb-4">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 py-5 px-8 rounded-2xl bg-white/[0.02] border border-white/[0.08] backdrop-blur-xl shadow-2xl">
+      <div className="relative z-10 max-w-5xl mx-auto px-3 sm:px-6 lg:px-8 w-full mt-8 sm:mt-14 pb-4">
+        <div className="grid grid-cols-3 gap-2 sm:gap-6 py-4 sm:py-5 px-3 sm:px-8 rounded-2xl bg-white/[0.02] border border-white/[0.08] backdrop-blur-xl shadow-2xl">
           <HeroStat number="60+" label="Projects Delivered" />
           <HeroStat number="100%" label="Client Satisfaction" />
           <HeroStat number="24/7" label="Support Available" />

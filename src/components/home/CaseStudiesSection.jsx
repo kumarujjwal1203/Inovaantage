@@ -236,7 +236,7 @@ export function CaseStudiesSection() {
                 </div>
                 
                 {/* Synced URL Bar */}
-                <div className="px-4 py-1 rounded-full bg-white/5 border border-white/10 text-[11px] font-mono text-slate-300 truncate max-w-[280px] sm:max-w-[360px] flex items-center gap-2">
+                <div className="px-3 sm:px-4 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] sm:text-[11px] font-mono text-slate-300 truncate max-w-[170px] sm:max-w-[360px] flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
                   <span>{activeProject.url}</span>
                 </div>
