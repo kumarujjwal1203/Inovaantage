@@ -17,9 +17,9 @@ export function GlassCard({
       className={twMerge(
         clsx(
           'relative rounded-2xl p-6 md:p-8',
-          'bg-white/[0.03] backdrop-blur-xl border border-white/[0.08]',
-          'shadow-2xl shadow-black/40',
-          hoverEffect && 'transition-all duration-300 hover:-translate-y-1.5 hover:bg-white/[0.05] hover:border-cyan-electric/30 hover:shadow-cyan-electric/10',
+          'bg-white/95 backdrop-blur-xl border border-slate-200/90',
+          'shadow-xl shadow-slate-900/5 text-slate-900',
+          hoverEffect && 'transition-all duration-300 hover:-translate-y-1 hover:border-[#FF6B00]/40 hover:shadow-2xl hover:shadow-orange-500/10',
           glow && 'glow-border',
           className
         )
@@ -27,7 +27,7 @@ export function GlassCard({
       {...props}
     >
       {/* Subtle top inner highlight */}
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent rounded-t-2xl pointer-events-none" />
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent rounded-t-2xl pointer-events-none" />
       {children}
     </motion.div>
   );

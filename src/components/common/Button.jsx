@@ -25,10 +25,10 @@ export function Button({
   const baseStyles = 'inline-flex items-center justify-center font-medium rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#FF6B00]/50 disabled:opacity-50 disabled:cursor-not-allowed group relative overflow-hidden';
 
   const variants = {
-    primary: 'bg-gradient-to-r from-[#FF6B00] via-[#FF8800] to-[#7B2FF7] text-black font-extrabold shadow-lg shadow-[#FF6B00]/25 hover:shadow-[#FF6B00]/40 hover:scale-[1.02] active:scale-[0.98]',
-    secondary: 'bg-white/5 backdrop-blur-md text-white border border-white/10 hover:border-white/20 hover:bg-white/10 hover:scale-[1.02] active:scale-[0.98]',
-    outline: 'border border-[#FF6B00]/60 text-[#FF6B00] hover:bg-[#FF6B00]/10 hover:border-[#FF6B00] hover:scale-[1.02] active:scale-[0.98]',
-    ghost: 'text-slate-300 hover:text-white hover:bg-white/5 active:scale-[0.98]'
+    primary: 'bg-gradient-to-r from-[#FF6B00] to-[#FF8800] text-white font-bold shadow-lg shadow-[#FF6B00]/25 hover:shadow-[#FF6B00]/40 hover:scale-[1.02] active:scale-[0.98]',
+    secondary: 'bg-slate-100 text-slate-800 border border-slate-200 hover:border-slate-300 hover:bg-slate-200/80 hover:scale-[1.02] active:scale-[0.98]',
+    outline: 'border-2 border-[#FF6B00] text-[#FF6B00] hover:bg-[#FF6B00] hover:text-white hover:scale-[1.02] active:scale-[0.98]',
+    ghost: 'text-slate-700 hover:text-slate-900 hover:bg-slate-100 active:scale-[0.98]'
   };
 
   const sizes = {
