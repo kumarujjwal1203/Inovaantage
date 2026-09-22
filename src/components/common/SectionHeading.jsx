@@ -23,9 +23,9 @@ export function SectionHeading({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-cyan-electric/10 text-cyan-electric border border-cyan-electric/20 mb-4"
+          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold font-mono tracking-wider uppercase bg-[#FF6B00]/10 text-[#FF6B00] border border-[#FF6B00]/30 mb-4"
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-cyan-electric animate-ping" />
+          <span className="w-1.5 h-1.5 rounded-full bg-[#FF6B00] animate-ping" />
           {badge}
         </motion.div>
       )}

@@ -42,7 +42,7 @@ export function Portfolio() {
               {selectedCategory === cat && (
                 <motion.div
                   layoutId="portfolioFilterPill"
-                  className="absolute inset-0 bg-gradient-to-r from-cyan-electric to-violet-glow rounded-full shadow-md shadow-cyan-electric/30"
+                  className="absolute inset-0 bg-gradient-to-r from-[#FF6B00] to-[#FF8800] rounded-full shadow-md shadow-[#FF6B00]/30"
                   transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                 />
               )}

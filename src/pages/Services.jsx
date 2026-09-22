@@ -28,13 +28,13 @@ export function Services() {
               <GlassCard key={service.id} glow className="flex flex-col justify-between group p-8">
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-electric/20 to-violet-glow/20 border border-cyan-electric/30 flex items-center justify-center text-cyan-electric group-hover:scale-110 transition-transform">
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#FF6B00]/20 to-[#FF8800]/10 border border-[#FF6B00]/30 flex items-center justify-center text-[#FF6B00] group-hover:scale-110 transition-transform">
                       <IconComponent className="w-7 h-7" />
                     </div>
-                    <span className="text-sm font-mono font-bold text-slate-500">{service.badge}</span>
+                    <span className="text-sm font-mono font-bold text-slate-400">{service.badge}</span>
                   </div>
 
-                  <h3 className="text-2xl font-bold font-heading text-white mb-3 group-hover:text-cyan-electric transition-colors">
+                  <h3 className="text-2xl font-bold font-heading text-white mb-3 group-hover:text-[#FF6B00] transition-colors">
                     {service.title}
                   </h3>
 
@@ -45,8 +45,8 @@ export function Services() {
                   {/* Capabilities List */}
                   <div className="space-y-2 mb-6">
                     {service.capabilities.slice(0, 3).map((cap, idx) => (
-                      <div key={idx} className="flex items-center gap-2 text-xs text-slate-400">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-cyan-electric shrink-0" />
+                      <div key={idx} className="flex items-center gap-2 text-xs text-slate-300">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#FF6B00] shrink-0" />
                         <span>{cap}</span>
                       </div>
                     ))}
