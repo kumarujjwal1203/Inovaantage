@@ -18,7 +18,19 @@ const caseStudiesData = [
     client: 'Global Utility Provider',
     icon: Network,
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
-    gradient: 'from-[#FF6B00] via-[#7B61FF] to-[#00F0FF]',
+    gradient: 'from-[#FF6B00] via-[#FF8800] to-orange-500',
+    colorTheme: {
+      accent: '#FF6B00',
+      activeBg: 'bg-orange-50/80',
+      activeBorder: 'border-[#FF6B00]',
+      shadow: 'shadow-orange-500/20',
+      badgeBg: 'bg-[#FF6B00] text-white border-[#FF6B00]',
+      badgePill: 'bg-orange-100 text-[#FF6B00] border-orange-200',
+      titleActive: 'text-[#FF6B00]',
+      tagHover: 'hover:border-[#FF6B00] hover:text-[#FF6B00]',
+      categoryText: 'text-[#FF6B00]',
+      glowColor: 'from-[#FF6B00]/20 to-orange-500/5'
+    },
     isInteractiveCard: true
   },
   {
@@ -34,7 +46,19 @@ const caseStudiesData = [
     client: 'Tier-1 Telecom Operator',
     icon: Radio,
     image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=80',
-    gradient: 'from-[#00F0FF] via-indigo-600 to-[#FF2E93]'
+    gradient: 'from-[#0284C7] via-sky-500 to-cyan-500',
+    colorTheme: {
+      accent: '#0284C7',
+      activeBg: 'bg-sky-50/80',
+      activeBorder: 'border-[#0284C7]',
+      shadow: 'shadow-sky-500/20',
+      badgeBg: 'bg-[#0284C7] text-white border-[#0284C7]',
+      badgePill: 'bg-sky-100 text-[#0284C7] border-sky-200',
+      titleActive: 'text-[#0284C7]',
+      tagHover: 'hover:border-[#0284C7] hover:text-[#0284C7]',
+      categoryText: 'text-[#0284C7]',
+      glowColor: 'from-[#0284C7]/20 to-sky-500/5'
+    }
   },
   {
     id: 'enterprise-gis-data-lake',
@@ -49,7 +73,19 @@ const caseStudiesData = [
     client: 'National Energy Grid',
     icon: Database,
     image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80',
-    gradient: 'from-[#7B61FF] via-[#FF6B00] to-cyan-400'
+    gradient: 'from-[#7C3AED] via-purple-600 to-indigo-500',
+    colorTheme: {
+      accent: '#7C3AED',
+      activeBg: 'bg-purple-50/80',
+      activeBorder: 'border-[#7C3AED]',
+      shadow: 'shadow-purple-500/20',
+      badgeBg: 'bg-[#7C3AED] text-white border-[#7C3AED]',
+      badgePill: 'bg-purple-100 text-[#7C3AED] border-purple-200',
+      titleActive: 'text-[#7C3AED]',
+      tagHover: 'hover:border-[#7C3AED] hover:text-[#7C3AED]',
+      categoryText: 'text-[#7C3AED]',
+      glowColor: 'from-[#7C3AED]/20 to-purple-500/5'
+    }
   },
   {
     id: 'smart-grid-predictive-maintenance',
@@ -64,13 +100,24 @@ const caseStudiesData = [
     client: 'Renewable Power Transmission',
     icon: Zap,
     image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1200&q=80',
-    gradient: 'from-emerald-400 via-teal-500 to-[#7B61FF]'
+    gradient: 'from-[#059669] via-emerald-600 to-teal-500',
+    colorTheme: {
+      accent: '#059669',
+      activeBg: 'bg-emerald-50/80',
+      activeBorder: 'border-[#059669]',
+      shadow: 'shadow-emerald-500/20',
+      badgeBg: 'bg-[#059669] text-white border-[#059669]',
+      badgePill: 'bg-emerald-100 text-[#059669] border-emerald-200',
+      titleActive: 'text-[#059669]',
+      tagHover: 'hover:border-[#059669] hover:text-[#059669]',
+      categoryText: 'text-[#059669]',
+      glowColor: 'from-[#059669]/20 to-emerald-500/5'
+    }
   }
 ];
 
 export function CaseStudiesSection() {
-  // Card 03 (index 2: Enterprise GIS Data Lake) is expanded/active by default
-  const [activeIdx, setActiveIdx] = useState(2);
+  const [activeIdx, setActiveIdx] = useState(1); // 5G Fiber Grid active by default
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
   const activeProject = caseStudiesData[activeIdx];
@@ -92,13 +139,13 @@ export function CaseStudiesSection() {
       case '02':
         // 5G Fiber Grid Telemetry Dashboard UI Widget
         return (
-          <div className="w-full p-4 rounded-2xl bg-black/75 border border-[#00F0FF]/40 backdrop-blur-md space-y-3 shadow-xl">
+          <div className="w-full p-4 rounded-2xl bg-black/80 border border-[#0284C7]/50 backdrop-blur-md space-y-3 shadow-xl">
             <div className="flex items-center justify-between text-xs font-mono">
-              <span className="text-cyan-electric font-bold flex items-center gap-1.5">
-                <Radio className="w-3.5 h-3.5 animate-pulse text-cyan-electric" />
+              <span className="text-[#0284C7] font-bold flex items-center gap-1.5">
+                <Radio className="w-3.5 h-3.5 animate-pulse text-[#0284C7]" />
                 5G Fiber Node Telemetry Stream
               </span>
-              <span className="px-2 py-0.5 rounded text-[10px] bg-cyan-500/20 text-cyan-electric border border-cyan-500/40">
+              <span className="px-2 py-0.5 rounded text-[10px] bg-sky-500/20 text-[#0284C7] border border-[#0284C7]/40">
                 LIVE 1.2M EVT/S
               </span>
             </div>
@@ -108,7 +155,7 @@ export function CaseStudiesSection() {
                 <span className="text-[10px] font-mono text-slate-400 uppercase">Optical Signal Quality</span>
                 <div className="text-lg font-extrabold text-white mt-0.5">99.98%</div>
                 <div className="w-full bg-white/10 h-1.5 rounded-full mt-2 overflow-hidden">
-                  <div className="bg-cyan-electric h-full w-[98%]" />
+                  <div className="bg-[#0284C7] h-full w-[98%]" />
                 </div>
               </div>
 
@@ -126,10 +173,10 @@ export function CaseStudiesSection() {
       case '03':
         // Enterprise GIS Data Lake & Governance UI Widget
         return (
-          <div className="w-full p-4 rounded-2xl bg-black/75 border border-[#7B61FF]/50 backdrop-blur-md space-y-3 shadow-xl">
+          <div className="w-full p-4 rounded-2xl bg-black/80 border border-[#7C3AED]/50 backdrop-blur-md space-y-3 shadow-xl">
             <div className="flex items-center justify-between text-xs font-mono">
-              <span className="text-[#7B61FF] font-bold flex items-center gap-1.5">
-                <Database className="w-3.5 h-3.5 text-[#7B61FF]" />
+              <span className="text-[#7C3AED] font-bold flex items-center gap-1.5">
+                <Database className="w-3.5 h-3.5 text-[#7C3AED]" />
                 PostGIS & Esri Spatial Data Lake
               </span>
               <span className="px-2 py-0.5 rounded text-[10px] bg-purple-500/20 text-purple-300 border border-purple-500/40">
@@ -144,11 +191,11 @@ export function CaseStudiesSection() {
               </div>
               <div className="p-2.5 rounded-xl bg-white/5 border border-white/10 text-center">
                 <div className="text-[10px] font-mono text-slate-400">ArcGIS Lake</div>
-                <div className="text-sm font-extrabold text-cyan-electric mt-0.5">Active</div>
+                <div className="text-sm font-extrabold text-[#7C3AED] mt-0.5">Active</div>
               </div>
               <div className="p-2.5 rounded-xl bg-white/5 border border-white/10 text-center">
                 <div className="text-[10px] font-mono text-slate-400">Queries</div>
-                <div className="text-sm font-extrabold text-[#FF6B00] mt-0.5">&lt; 0.2s</div>
+                <div className="text-sm font-extrabold text-emerald-400 mt-0.5">&lt; 0.2s</div>
               </div>
             </div>
           </div>
@@ -157,10 +204,10 @@ export function CaseStudiesSection() {
       case '04':
         // Smart Grid Predictive Maintenance Portal UI Widget
         return (
-          <div className="w-full p-4 rounded-2xl bg-black/75 border border-emerald-400/50 backdrop-blur-md space-y-3 shadow-xl">
+          <div className="w-full p-4 rounded-2xl bg-black/80 border border-[#059669]/50 backdrop-blur-md space-y-3 shadow-xl">
             <div className="flex items-center justify-between text-xs font-mono">
-              <span className="text-emerald-400 font-bold flex items-center gap-1.5">
-                <Zap className="w-3.5 h-3.5 text-emerald-400 animate-pulse" />
+              <span className="text-[#059669] font-bold flex items-center gap-1.5">
+                <Zap className="w-3.5 h-3.5 text-[#059669] animate-pulse" />
                 Grid Transformer T-804 AI Monitor
               </span>
               <span className="px-2 py-0.5 rounded text-[10px] bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
@@ -175,7 +222,7 @@ export function CaseStudiesSection() {
               </div>
               <div className="text-right">
                 <div className="text-[10px] font-mono text-slate-400 uppercase">Outage Prevented</div>
-                <div className="text-base font-extrabold text-emerald-400 mt-0.5">-35% Blackouts</div>
+                <div className="text-base font-extrabold text-[#059669] mt-0.5">-35% Blackouts</div>
               </div>
             </div>
           </div>
@@ -237,7 +284,7 @@ export function CaseStudiesSection() {
                 
                 {/* Synced URL Bar */}
                 <div className="px-3 sm:px-4 py-1 rounded-full bg-white/10 border border-white/10 text-[10px] sm:text-[11px] font-mono text-slate-200 truncate max-w-[170px] sm:max-w-[360px] flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                  <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: activeProject.colorTheme.accent }} />
                   <span>{activeProject.url}</span>
                 </div>
 
@@ -274,7 +321,7 @@ export function CaseStudiesSection() {
                       className="absolute inset-0 w-full h-full object-cover opacity-50 transition-opacity duration-500"
                     />
 
-                    {/* Gradient Overlay for crisp text contrast */}
+                    {/* Gradient Overlay matching active card's distinct color theme */}
                     <motion.div
                       animate={{
                         backgroundPosition: ['0% 50%', '100% 50%', '0% 50%']
@@ -291,8 +338,11 @@ export function CaseStudiesSection() {
                     {/* Top Overlay Category Badge & Icon */}
                     <div className="relative z-10 flex items-start justify-between">
                       <div>
-                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-black/60 border border-white/20 text-[#FF6B00] backdrop-blur-md">
-                          <ShieldCheck className="w-3 h-3 text-[#FF6B00]" />
+                        <span
+                          style={{ color: activeProject.colorTheme.accent, borderColor: `${activeProject.colorTheme.accent}50` }}
+                          className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-black/60 backdrop-blur-md border"
+                        >
+                          <ShieldCheck className="w-3 h-3" style={{ color: activeProject.colorTheme.accent }} />
                           {activeProject.category}
                         </span>
                         <h3 className="text-xl sm:text-2xl font-extrabold text-white font-heading mt-3 drop-shadow-md">
@@ -300,8 +350,11 @@ export function CaseStudiesSection() {
                         </h3>
                       </div>
 
-                      <div className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white shrink-0 shadow-lg">
-                        <activeProject.icon className="w-5 h-5 text-[#FF6B00] animate-pulse" />
+                      <div
+                        style={{ borderColor: `${activeProject.colorTheme.accent}50` }}
+                        className="w-10 h-10 rounded-full bg-white/10 border flex items-center justify-center text-white shrink-0 shadow-lg"
+                      >
+                        <activeProject.icon className="w-5 h-5 animate-pulse" style={{ color: activeProject.colorTheme.accent }} />
                       </div>
                     </div>
 
@@ -313,7 +366,7 @@ export function CaseStudiesSection() {
                     {/* Bottom Overlay Stat Bar */}
                     <div className="relative z-10 flex items-center justify-between p-3.5 rounded-xl bg-black/80 backdrop-blur-md border border-white/15 shadow-xl">
                       <div className="flex items-center gap-2.5">
-                        <div className="w-2.5 h-2.5 rounded-full bg-[#FF6B00] animate-pulse" />
+                        <div className="w-2.5 h-2.5 rounded-full animate-pulse" style={{ backgroundColor: activeProject.colorTheme.accent }} />
                         <span className="text-xs sm:text-sm font-mono font-bold text-white tracking-tight">
                           {activeProject.stats}
                         </span>
@@ -345,6 +398,8 @@ export function CaseStudiesSection() {
             >
               {caseStudiesData.map((project, idx) => {
                 const isActive = activeIdx === idx;
+                const theme = project.colorTheme;
+
                 return (
                   <motion.div
                     key={project.id}
@@ -357,18 +412,20 @@ export function CaseStudiesSection() {
                     whileHover={{ x: 6, transition: { duration: 0.2 } }}
                     className={`group cursor-pointer p-5 rounded-2xl border transition-all duration-300 overflow-hidden ${
                       isActive
-                        ? 'bg-orange-50/50 border-[#FF6B00] shadow-xl shadow-[#FF6B00]/10'
-                        : 'bg-white border-slate-200 hover:border-[#FF6B00]/40 hover:bg-slate-50/50 shadow-sm'
+                        ? `${theme.activeBg} ${theme.activeBorder} shadow-xl ${theme.shadow}`
+                        : 'bg-white border-slate-200 hover:border-slate-300 shadow-sm'
                     }`}
                   >
                     {/* Category Label & Card Number Header */}
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-xs font-mono font-bold text-slate-500 uppercase tracking-wider group-hover:text-[#FF6B00] transition-colors">
+                      <span className={`text-xs font-mono font-bold uppercase tracking-wider transition-colors ${
+                        isActive ? theme.categoryText : 'text-slate-500 group-hover:text-slate-700'
+                      }`}>
                         {project.category}
                       </span>
-                      <span className={`text-xs font-mono font-bold px-2 py-0.5 rounded ${
+                      <span className={`text-xs font-mono font-bold px-2.5 py-0.5 rounded transition-colors ${
                         isActive
-                          ? 'bg-[#FF6B00] text-white border border-[#FF6B00]'
+                          ? theme.badgeBg
                           : 'bg-slate-100 text-slate-700 border border-slate-200'
                       }`}>
                         {project.num}
@@ -377,7 +434,7 @@ export function CaseStudiesSection() {
 
                     {/* Title */}
                     <h3 className={`text-lg font-bold font-heading transition-colors ${
-                      isActive ? 'text-[#FF6B00]' : 'text-slate-900 group-hover:text-[#FF6B00]'
+                      isActive ? theme.titleActive : 'text-slate-900 group-hover:text-slate-800'
                     }`}>
                       {project.title}
                     </h3>
@@ -416,7 +473,11 @@ export function CaseStudiesSection() {
                                   hidden: { opacity: 0, y: 5 },
                                   show: { opacity: 1, y: 0 }
                                 }}
-                                className="px-2.5 py-0.5 rounded text-[10px] font-mono font-medium bg-slate-100 text-slate-700 border border-slate-200 hover:border-[#FF6B00]/40 transition-colors"
+                                className={`px-2.5 py-0.5 rounded text-[10px] font-mono font-medium transition-colors ${
+                                  isActive
+                                    ? `${theme.badgePill} border`
+                                    : 'bg-slate-100 text-slate-700 border border-slate-200'
+                                }`}
                               >
                                 {tag}
                               </motion.span>
