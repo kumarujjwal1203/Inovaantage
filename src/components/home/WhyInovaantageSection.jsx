@@ -43,23 +43,23 @@ const challengeSolutionData = [
 
 export function WhyInovaantageSection() {
   return (
-    <section id="why-inovaantage" className="relative bg-[#050507] py-28 border-b border-white/10 select-none overflow-hidden">
+    <section id="why-inovaantage" className="relative bg-[#FAFAFD] py-28 border-b border-slate-200 select-none overflow-hidden">
       {/* Background ambient radial light */}
       <div className="absolute top-1/4 left-1/3 w-96 h-96 rounded-full bg-[#FF6B00]/10 blur-[170px] pointer-events-none" />
-      <div className="absolute bottom-10 right-1/4 w-96 h-96 rounded-full bg-[#7B61FF]/10 blur-[170px] pointer-events-none" />
+      <div className="absolute bottom-10 right-1/4 w-96 h-96 rounded-full bg-[#FF8800]/10 blur-[170px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-bold font-mono uppercase tracking-wider bg-white/5 border border-white/10 text-[#FF6B00] mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-bold font-mono uppercase tracking-wider bg-[#FF6B00]/10 border border-[#FF6B00]/30 text-[#FF6B00] mb-4">
             <span className="w-1.5 h-1.5 rounded-full bg-[#FF6B00] animate-ping" />
             CHALLENGE VS. SOLUTION
           </div>
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight font-heading leading-tight">
-            Why <span className="bg-gradient-to-r from-[#FF6B00] via-[#FF8800] to-amber-400 bg-clip-text text-transparent">Inovaantage</span>
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight font-heading leading-tight">
+            Why <span className="text-gradient">Inovaantage</span>
           </h2>
-          <p className="text-base sm:text-lg text-slate-300 font-light mt-3 max-w-2xl">
+          <p className="text-base sm:text-lg text-slate-600 font-normal mt-3 max-w-2xl">
             We solve the problems that generic IT vendors can't — because we're built for your industry.
           </p>
         </div>
@@ -88,10 +88,10 @@ export function WhyInovaantageSection() {
                   show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } }
                 }}
                 whileHover={{ y: -6 }}
-                className="group glass-panel p-7 sm:p-8 rounded-3xl border border-white/15 relative overflow-hidden bg-gradient-to-b from-white/[0.05] via-black/60 to-black/90 shadow-2xl flex flex-col justify-between"
+                className="group p-7 sm:p-8 rounded-3xl bg-white border border-slate-200 relative overflow-hidden shadow-xl flex flex-col justify-between"
               >
                 {/* Background Concentric Circles Pattern in Top Right */}
-                <div className="absolute top-0 right-0 w-48 h-48 pointer-events-none opacity-20 group-hover:opacity-40 transition-opacity duration-500">
+                <div className="absolute top-0 right-0 w-48 h-48 pointer-events-none opacity-15 group-hover:opacity-30 transition-opacity duration-500">
                   <svg className="w-full h-full text-[#FF6B00]" viewBox="0 0 200 200" fill="none">
                     <circle cx="160" cy="40" r="120" stroke="currentColor" strokeWidth="1.5" strokeDasharray="4 4" />
                     <circle cx="160" cy="40" r="80" stroke="currentColor" strokeWidth="2" />
@@ -105,33 +105,33 @@ export function WhyInovaantageSection() {
                     <span className="text-[11px] font-mono font-bold text-[#FF6B00] uppercase tracking-wider bg-[#FF6B00]/10 px-3 py-1 rounded-full border border-[#FF6B00]/30">
                       {item.category}
                     </span>
-                    <div className="w-10 h-10 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 group-hover:text-white group-hover:border-[#FF6B00]/50 transition-colors">
+                    <div className="w-10 h-10 rounded-2xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-700 group-hover:text-[#FF6B00] group-hover:border-[#FF6B00]/50 transition-colors">
                       <IconComp className="w-5 h-5" />
                     </div>
                   </div>
 
-                  <h3 className="text-2xl sm:text-3xl font-extrabold font-heading text-white mb-6 relative z-10">
+                  <h3 className="text-2xl sm:text-3xl font-extrabold font-heading text-slate-900 mb-6 relative z-10">
                     {item.title}
                   </h3>
 
                   {/* CHALLENGE Box */}
-                  <div className="p-4 rounded-2xl bg-black/60 border border-white/10 mb-4 relative z-10 group-hover:border-rose-500/30 transition-colors">
-                    <div className="flex items-center gap-2 text-xs font-mono font-bold text-rose-400 mb-2">
-                      <ShieldAlert className="w-4 h-4 text-rose-400" />
+                  <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 mb-4 relative z-10 group-hover:border-rose-300 transition-colors">
+                    <div className="flex items-center gap-2 text-xs font-mono font-bold text-rose-500 mb-2">
+                      <ShieldAlert className="w-4 h-4 text-rose-500" />
                       <span>CHALLENGE</span>
                     </div>
-                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
                       {item.challenge}
                     </p>
                   </div>
 
                   {/* SOLUTION Box */}
-                  <div className="p-4 rounded-2xl bg-[#FF6B00]/10 border border-[#FF6B00]/40 relative z-10 group-hover:border-[#FF6B00] transition-colors shadow-lg shadow-[#FF6B00]/10">
+                  <div className="p-4 rounded-2xl bg-orange-50/60 border border-[#FF6B00]/40 relative z-10 group-hover:border-[#FF6B00] transition-colors shadow-sm">
                     <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#FF6B00] mb-2">
                       <CheckCircle2 className="w-4 h-4 text-[#FF6B00]" />
                       <span>SOLUTION</span>
                     </div>
-                    <p className="text-xs sm:text-sm text-white font-medium leading-relaxed">
+                    <p className="text-xs sm:text-sm text-slate-900 font-medium leading-relaxed">
                       {item.solution}
                     </p>
                   </div>

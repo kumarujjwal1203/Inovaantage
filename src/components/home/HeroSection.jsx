@@ -116,10 +116,10 @@ function ParticleSphere() {
       <points ref={pointsRef} geometry={geometry}>
         <pointsMaterial
           size={0.038}
-          color="#7B61FF"
+          color="#FF6B00"
           transparent
-          opacity={0.8}
-          blending={THREE.AdditiveBlending}
+          opacity={0.75}
+          blending={THREE.NormalBlending}
           sizeAttenuation
         />
       </points>
@@ -158,11 +158,11 @@ function HeroStat({ number, label }) {
 
   return (
     <div ref={ref} className="flex flex-col items-center text-center">
-      <div className="text-xl sm:text-3xl md:text-4xl font-extrabold font-heading text-white tracking-tight flex items-center">
+      <div className="text-xl sm:text-3xl md:text-4xl font-extrabold font-heading text-[#FF6B00] tracking-tight flex items-center">
         <span>{count}</span>
-        <span className="text-[#7B61FF]">{suffix}</span>
+        <span className="text-[#FF8800]">{suffix}</span>
       </div>
-      <div className="text-[10px] sm:text-xs text-slate-400 font-medium mt-0.5 sm:mt-1">{label}</div>
+      <div className="text-[10px] sm:text-xs text-slate-600 font-semibold mt-0.5 sm:mt-1">{label}</div>
     </div>
   );
 }
@@ -171,7 +171,7 @@ export function HeroSection() {
   return (
     <section className="relative min-h-screen flex flex-col justify-between pt-24 sm:pt-28 pb-6 overflow-hidden select-none">
       {/* 3D INTERACTIVE PARTICLE CANVAS IN BACKGROUND */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 opacity-80">
         <CanvasErrorBoundary>
           <Canvas camera={{ position: [0, 0, 5], fov: 60 }}>
             <ambientLight intensity={0.5} />
@@ -186,46 +186,53 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.15 }}
-          className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.08] font-heading pointer-events-auto"
+          className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.08] font-heading pointer-events-auto"
         >
-          Powering the <br />
-          <span className="italic font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#7B61FF] via-[#5D5FEF] to-[#FF6B00]">
-            Digital Backbone
-          </span> <br className="hidden sm:inline" />
-          of Utilities & Telecom
+          Accelerating Your <br />
+          <span className="italic font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B00] via-[#FF8800] to-[#E65C00]">
+            Digital Transformation
+          </span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="mt-6 text-base sm:text-lg text-slate-300 max-w-2xl mx-auto font-light leading-relaxed pointer-events-auto"
+          className="mt-6 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto font-normal leading-relaxed pointer-events-auto"
         >
-          Inovaantage empowers global utility grids, telecommunication networks, and enterprise providers with mission-critical software, IoT telemetry, and high-availability cloud platforms.
+          Inovaantage provides IT and geospatial solutions for utilities, telecom, and infrastructure sectors worldwide. Our deliverables in GIS, ADMS, SCADA, OSS/BSS, and workforce management support efficient operations.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.45 }}
-          className="mt-8 flex justify-center pointer-events-auto"
+          className="mt-8 flex flex-wrap items-center justify-center gap-4 pointer-events-auto"
         >
           <Link
-            to="/contact"
-            className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[#7B61FF] via-[#5D5FEF] to-[#FF6B00] text-black font-extrabold text-sm sm:text-base shadow-xl shadow-[#7B61FF]/30 hover:shadow-[#7B61FF]/50 hover:scale-[1.03] transition-all duration-300 group"
+            to="/services"
+            className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[#FF6B00] to-[#FF8800] text-white font-extrabold text-sm sm:text-base shadow-xl shadow-[#FF6B00]/25 hover:shadow-[#FF6B00]/40 hover:scale-[1.03] transition-all duration-300 group"
           >
-            <span>Start Your Project</span>
+            <span>Explore Products</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </Link>
+
+          <Link
+            to="/contact"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white border border-[#FF6B00] text-[#FF6B00] font-bold text-sm sm:text-base hover:bg-orange-50/50 shadow-md transition-all duration-300"
+          >
+            <span>Request a Demo</span>
+            <ArrowRight className="w-4 h-4" />
           </Link>
         </motion.div>
       </div>
 
       {/* BOTTOM STATS BAR POSITIONED SLIGHTLY HIGHER FOR ABOVE-THE-FOLD VISIBILITY */}
       <div className="relative z-10 max-w-5xl mx-auto px-3 sm:px-6 lg:px-8 w-full mt-8 sm:mt-14 pb-4">
-        <div className="grid grid-cols-3 gap-2 sm:gap-6 py-4 sm:py-5 px-3 sm:px-8 rounded-2xl bg-white/[0.02] border border-white/[0.08] backdrop-blur-xl shadow-2xl">
-          <HeroStat number="60+" label="Projects Delivered" />
-          <HeroStat number="100%" label="Client Satisfaction" />
-          <HeroStat number="24/7" label="Support Available" />
+        <div className="grid grid-cols-3 gap-2 sm:gap-6 py-4 sm:py-5 px-3 sm:px-8 rounded-2xl bg-white border border-slate-200/90 backdrop-blur-xl shadow-xl shadow-slate-900/5">
+          <HeroStat number="10+" label="Countries" />
+          <HeroStat number="100%" label="Migration Accuracy" />
+          <HeroStat number="24/7" label="Global Support" />
         </div>
       </div>
     </section>

@@ -37,7 +37,7 @@ export function App() {
   const location = useLocation();
 
   return (
-    <div className="min-h-screen flex flex-col relative text-slate-100 bg-[#050507]">
+    <div className="min-h-screen flex flex-col relative text-slate-900 bg-[#FAFAFD]">
       {/* Global Background Visual System */}
       <BackgroundSystem />
 

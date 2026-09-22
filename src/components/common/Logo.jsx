@@ -17,7 +17,7 @@ export function Logo({ className = '', showTagline = false, size = 'md' }) {
   return (
     <Link to="/" className={`inline-flex flex-col items-start group ${className}`}>
       {/* Orange Inovaantage Vector Logo */}
-      <div className={`flex items-center font-heading font-extrabold tracking-wider text-white ${textSizeClasses[size]}`}>
+      <div className={`flex items-center font-heading font-extrabold tracking-wider text-slate-900 ${textSizeClasses[size]}`}>
         <span>INOV</span>
         
         {/* Signature Twin Peak Orange Chevron "AA" */}

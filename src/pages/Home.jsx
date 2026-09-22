@@ -12,7 +12,7 @@ import { FooterMascotSection } from '../components/home/FooterMascotSection';
 
 export function Home() {
   return (
-    <div className="relative min-h-screen bg-[#050507] text-white selection:bg-[#7B61FF]/30 selection:text-white overflow-x-hidden font-sans">
+    <div className="relative min-h-screen bg-[#FAFAFD] text-slate-900 selection:bg-[#FF6B00]/20 selection:text-[#FF6B00] overflow-x-hidden font-sans">
       {/* SECTION 1: HERO WITH 3D PARTICLE SPHERE */}
       <HeroSection />
 

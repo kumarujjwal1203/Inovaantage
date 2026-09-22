@@ -113,24 +113,23 @@ export function GlobalReachSection() {
   const selectedOffice = globalOffices.find((o) => o.id === selectedOfficeId) || globalOffices[0];
 
   return (
-    <section id="locations" className="relative bg-[#050507] py-28 border-b border-white/10 select-none overflow-hidden">
-      {/* Background ambient radial light */}
-      <div className="absolute top-1/3 left-0 w-[500px] h-[500px] rounded-full bg-[#00F0FF]/10 blur-[180px] pointer-events-none" />
-      <div className="absolute bottom-10 right-0 w-[500px] h-[500px] rounded-full bg-[#FF6B00]/10 blur-[180px] pointer-events-none" />
+    <section id="locations" className="relative bg-[#FAFAFD] py-24 sm:py-28 border-b border-slate-200 select-none overflow-hidden">
+      {/* Background subtle radial ambient light */}
+      <div className="absolute top-1/3 left-0 w-[500px] h-[500px] rounded-full bg-[#FF6B00]/5 blur-[160px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-bold font-mono uppercase tracking-wider bg-white/5 border border-white/10 text-[#FF6B00] mb-4">
+        <div className="mb-12 sm:mb-14">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-bold font-mono uppercase tracking-wider bg-orange-50 border border-[#FF6B00]/30 text-[#FF6B00] mb-4 shadow-sm">
             <Globe2 className="w-3.5 h-3.5 text-[#FF6B00]" />
             GLOBAL PRESENCE
           </div>
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight font-heading leading-tight">
-            Operating <span className="bg-gradient-to-r from-[#FF6B00] via-[#FF8800] to-amber-400 bg-clip-text text-transparent">Worldwide</span>
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight font-heading leading-tight">
+            Operating <span className="bg-gradient-to-r from-[#FF6B00] via-[#FF8800] to-amber-500 bg-clip-text text-transparent">Worldwide</span>
           </h2>
-          <p className="text-base sm:text-lg text-slate-300 font-light mt-3 max-w-2xl">
-            With offices across 10 countries, we deliver 24/7 support wherever you are.
+          <p className="text-base sm:text-lg text-slate-600 font-normal mt-3 max-w-2xl">
+            With offices across key global tech hubs, we deliver 24/7 engineering excellence wherever you are.
           </p>
         </div>
 
@@ -138,7 +137,7 @@ export function GlobalReachSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           {/* LEFT COLUMN: SCROLLABLE OFFICE LOCATIONS LIST */}
-          <div className="lg:col-span-5 glass-panel p-4 sm:p-5 rounded-3xl border border-white/15 max-h-[380px] sm:max-h-[620px] overflow-y-auto space-y-3 custom-scrollbar bg-gradient-to-b from-white/[0.04] to-black/80">
+          <div className="lg:col-span-5 bg-white/90 backdrop-blur-md p-4 sm:p-5 rounded-3xl border border-slate-200 shadow-xl max-h-[380px] sm:max-h-[620px] overflow-y-auto space-y-3 custom-scrollbar">
             {globalOffices.map((office) => {
               const isSelected = selectedOfficeId === office.id;
               return (
@@ -148,28 +147,28 @@ export function GlobalReachSection() {
                   whileHover={{ x: 4 }}
                   className={`group p-4 rounded-2xl border transition-all duration-300 cursor-pointer ${
                     isSelected
-                      ? 'bg-gradient-to-r from-[#FF6B00]/15 via-white/[0.05] to-transparent border-[#FF6B00]/80 shadow-lg shadow-[#FF6B00]/20'
-                      : 'bg-white/[0.02] border-white/10 hover:border-white/30 hover:bg-white/[0.04]'
+                      ? 'bg-orange-50/90 border-[#FF6B00] shadow-md shadow-[#FF6B00]/10'
+                      : 'bg-slate-50/50 border-slate-200 hover:border-slate-300 hover:bg-slate-100/70'
                   }`}
                 >
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-wider">
+                  <div className="flex items-center justify-between mb-1.5">
+                    <span className="text-[10px] font-mono font-bold text-slate-500 uppercase tracking-wider">
                       {office.region}
                     </span>
                     {isSelected && (
-                      <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-[#FF6B00]/20 text-[#FF6B00] border border-[#FF6B00]/40 flex items-center gap-1">
-                        <MapPin className="w-3 h-3 text-[#FF6B00]" />
+                      <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-[#FF6B00] text-white flex items-center gap-1 shadow-xs">
+                        <MapPin className="w-3 h-3 text-white" />
                         SELECTED
                       </span>
                     )}
                   </div>
 
-                  <h3 className="text-base sm:text-lg font-bold font-heading text-white flex items-center gap-2">
+                  <h3 className="text-base sm:text-lg font-bold font-heading text-slate-900 flex items-center gap-2">
                     <span>{office.flag}</span>
                     <span>{office.country}</span>
                   </h3>
 
-                  <p className="text-xs text-slate-300 leading-relaxed font-normal mt-2">
+                  <p className="text-xs text-slate-600 leading-relaxed font-normal mt-2">
                     {office.address}
                   </p>
 
@@ -185,45 +184,45 @@ export function GlobalReachSection() {
           </div>
 
           {/* RIGHT COLUMN: INTERACTIVE MAP & SATELLITE PREVIEW CARD */}
-          <div className="lg:col-span-7 glass-panel p-4 sm:p-5 rounded-3xl border border-white/15 bg-gradient-to-b from-white/[0.05] via-black/60 to-black/90 shadow-2xl flex flex-col justify-between min-h-[380px] sm:min-h-[620px] relative overflow-hidden">
+          <div className="lg:col-span-7 bg-white p-4 sm:p-5 rounded-3xl border border-slate-200 shadow-2xl flex flex-col justify-between min-h-[380px] sm:min-h-[620px] relative overflow-hidden">
             
             {/* Header Address & Coordinate Badge Bar */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between p-3.5 rounded-2xl bg-black/70 border border-white/10 mb-4 gap-3">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between p-3.5 rounded-2xl bg-slate-50 border border-slate-200 mb-4 gap-3 shadow-xs">
               <div className="flex items-center gap-2.5 truncate max-w-full">
                 <span className="text-lg">{selectedOffice.flag}</span>
                 <div className="truncate">
                   <div className="flex items-center gap-2">
-                    <span className="text-xs font-bold font-heading text-white">
+                    <span className="text-xs font-bold font-heading text-slate-900">
                       {selectedOffice.country}
                     </span>
-                    <span className="text-[10px] font-mono text-[#FF6B00] bg-[#FF6B00]/10 px-2 py-0.5 rounded border border-[#FF6B00]/30">
+                    <span className="text-[10px] font-mono text-[#FF6B00] bg-orange-50 px-2 py-0.5 rounded border border-[#FF6B00]/30 font-semibold">
                       {selectedOffice.coordText}
                     </span>
                   </div>
-                  <span className="text-[11px] font-mono text-slate-300 truncate block mt-0.5">
+                  <span className="text-[11px] font-mono text-slate-600 truncate block mt-0.5">
                     {selectedOffice.address}
                   </span>
                 </div>
               </div>
 
               {/* Map / Satellite View Toggle */}
-              <div className="flex items-center gap-1 bg-white/5 p-1 rounded-xl border border-white/10 shrink-0">
+              <div className="flex items-center gap-1 bg-slate-200/80 p-1 rounded-xl shrink-0">
                 <button
                   onClick={() => setMapMode('k')}
-                  className={`px-2.5 py-1 rounded-lg text-[10px] font-mono font-bold transition-colors ${
+                  className={`px-3 py-1 rounded-lg text-[10px] font-mono font-bold transition-colors ${
                     mapMode === 'k'
-                      ? 'bg-[#FF6B00] text-black shadow'
-                      : 'text-slate-400 hover:text-white'
+                      ? 'bg-[#FF6B00] text-white shadow-xs'
+                      : 'text-slate-700 hover:text-slate-900'
                   }`}
                 >
                   Satellite
                 </button>
                 <button
                   onClick={() => setMapMode('m')}
-                  className={`px-2.5 py-1 rounded-lg text-[10px] font-mono font-bold transition-colors ${
+                  className={`px-3 py-1 rounded-lg text-[10px] font-mono font-bold transition-colors ${
                     mapMode === 'm'
-                      ? 'bg-[#FF6B00] text-black shadow'
-                      : 'text-slate-400 hover:text-white'
+                      ? 'bg-[#FF6B00] text-white shadow-xs'
+                      : 'text-slate-700 hover:text-slate-900'
                   }`}
                 >
                   Map
@@ -232,7 +231,7 @@ export function GlobalReachSection() {
             </div>
 
             {/* Google Maps Frame with Building Address Search Query */}
-            <div className="relative flex-grow rounded-2xl overflow-hidden border border-white/10 bg-black min-h-[300px] sm:min-h-[460px]">
+            <div className="relative flex-grow rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 min-h-[300px] sm:min-h-[460px]">
               <AnimatePresence mode="wait">
                 <motion.iframe
                   key={selectedOffice.id + '-' + mapMode}
@@ -243,7 +242,7 @@ export function GlobalReachSection() {
                   title={selectedOffice.country}
                   width="100%"
                   height="100%"
-                  className="absolute inset-0 w-full h-full border-0 filter brightness-95 contrast-105"
+                  className="absolute inset-0 w-full h-full border-0 filter brightness-100 contrast-100"
                   loading="lazy"
                   allowFullScreen
                   src={`https://maps.google.com/maps?q=${encodeURIComponent(selectedOffice.query)}&hl=en&z=18&t=${mapMode}&ie=UTF8&iwloc=B&output=embed`}
@@ -257,7 +256,7 @@ export function GlobalReachSection() {
                 href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(selectedOffice.address)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-xs font-mono font-bold text-[#FF6B00] hover:text-[#ff8533] transition-colors group"
+                className="inline-flex items-center gap-2 text-xs font-mono font-bold text-[#FF6B00] hover:text-[#e05e00] transition-colors group"
               >
                 <span>Open Location in Google Maps</span>
                 <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />

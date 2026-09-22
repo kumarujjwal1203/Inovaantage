@@ -138,16 +138,16 @@ export function ServicesParticleMorph() {
   const activeShape = hoveredShape !== null ? hoveredShape : (selectedShape !== null ? selectedShape : 0);
 
   return (
-    <section id="services" className="relative py-28 bg-[#050507] border-t border-white/10 select-none overflow-hidden">
+    <section id="services" className="relative py-28 bg-[#FAFAFD] border-t border-slate-200 select-none overflow-hidden">
       {/* Ambient background glows */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-[#FF6B00]/10 blur-[150px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-[#7B61FF]/10 blur-[150px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-[#FF8800]/10 blur-[150px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
           {/* LEFT: STICKY 3D PARTICLE MORPH CANVAS (Clean without overlay text) */}
-          <div className="lg:col-span-6 lg:sticky lg:top-28 h-[280px] sm:h-[450px] lg:h-[500px] relative rounded-3xl bg-white/[0.02] border border-white/10 overflow-hidden shadow-2xl">
+          <div className="lg:col-span-6 lg:sticky lg:top-28 h-[280px] sm:h-[450px] lg:h-[500px] relative rounded-3xl bg-white border border-slate-200 overflow-hidden shadow-xl">
             <CanvasErrorBoundary>
               <Canvas camera={{ position: [0, 0, 5], fov: 60 }}>
                 <ambientLight intensity={0.5} />
@@ -164,13 +164,13 @@ export function ServicesParticleMorph() {
                 <span className="w-1.5 h-1.5 rounded-full bg-[#FF6B00] animate-ping" />
                 Signature Capabilities
               </div>
-              <h2 className="text-3xl sm:text-5xl font-extrabold font-heading text-white tracking-tight">
+              <h2 className="text-3xl sm:text-5xl font-extrabold font-heading text-slate-900 tracking-tight">
                 Architected For <span className="text-gradient">Impact</span>
               </h2>
             </div>
 
             {/* Connecting Vertical Line behind numbers */}
-            <div className="absolute left-[37px] top-[140px] bottom-[30px] w-0.5 bg-gradient-to-b from-[#FF6B00]/40 via-cyan-electric/30 to-[#7B61FF]/40 pointer-events-none hidden sm:block" />
+            <div className="absolute left-[37px] top-[140px] bottom-[30px] w-0.5 bg-gradient-to-b from-[#FF6B00]/40 via-[#FF8800]/30 to-[#E65C00]/40 pointer-events-none hidden sm:block" />
 
             {/* Staggered Cards List */}
             <motion.div
@@ -205,8 +205,8 @@ export function ServicesParticleMorph() {
                     whileHover={{ x: 6, transition: { duration: 0.2 } }}
                     className={`group relative p-4 sm:p-6 rounded-2xl border transition-all duration-300 cursor-pointer overflow-hidden ${
                       isCardHighlight
-                        ? 'bg-gradient-to-r from-white/[0.05] to-black/80 border-[#FF6B00]/70 shadow-xl shadow-[#FF6B00]/25'
-                        : 'bg-white/[0.02] border-white/10 hover:border-white/30 hover:bg-white/[0.04]'
+                        ? 'bg-orange-50/50 border-[#FF6B00] shadow-xl shadow-[#FF6B00]/10'
+                        : 'bg-white border-slate-200 hover:border-[#FF6B00]/40 hover:bg-slate-50/50 shadow-sm'
                     }`}
                   >
                     {/* Slow pulsing glow on highlighted card border */}
@@ -224,8 +224,8 @@ export function ServicesParticleMorph() {
                         <div className="flex items-center gap-2 shrink-0">
                           <span className={`text-xs sm:text-sm font-mono font-bold px-2 py-0.5 rounded transition-colors ${
                             isCardHighlight
-                              ? 'bg-[#FF6B00]/20 text-[#FF6B00] border border-[#FF6B00]/40'
-                              : 'bg-white/5 text-slate-400 border border-white/10'
+                              ? 'bg-[#FF6B00] text-white border border-[#FF6B00]'
+                              : 'bg-slate-100 text-slate-700 border border-slate-200'
                           }`}>
                             {card.num}
                           </span>
@@ -242,15 +242,15 @@ export function ServicesParticleMorph() {
                         {/* Title & Icon & Description */}
                         <div>
                           <h3 className={`text-lg sm:text-xl font-bold font-heading transition-colors flex items-center gap-2.5 ${
-                            isCardHighlight ? 'text-white' : 'text-slate-200 group-hover:text-white'
+                            isCardHighlight ? 'text-[#FF6B00]' : 'text-slate-900 group-hover:text-[#FF6B00]'
                           }`}>
                             <span>{card.title}</span>
                             <IconComp className={`w-4 h-4 inline-block transition-colors ${
-                              isCardHighlight ? 'text-[#FF6B00]' : 'text-slate-400 group-hover:text-cyan-electric'
+                              isCardHighlight ? 'text-[#FF6B00]' : 'text-slate-500 group-hover:text-[#FF6B00]'
                             }`} />
                           </h3>
 
-                          <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mt-2 font-normal">
+                          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-2 font-normal">
                             {card.desc}
                           </p>
                         </div>
@@ -259,8 +259,8 @@ export function ServicesParticleMorph() {
                       {/* Small circular arrow-icon button on the right */}
                       <div className={`w-8 h-8 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300 ${
                         isCardHighlight
-                          ? 'bg-[#FF6B00]/20 border-[#FF6B00]/50 text-[#FF6B00] scale-110 rotate-45'
-                          : 'bg-white/5 border-white/10 text-slate-400 group-hover:text-white group-hover:border-white/30 group-hover:rotate-45 group-hover:scale-110'
+                          ? 'bg-[#FF6B00] border-[#FF6B00] text-white scale-110 rotate-45'
+                          : 'bg-slate-100 border-slate-200 text-slate-600 group-hover:bg-[#FF6B00] group-hover:text-white group-hover:border-[#FF6B00] group-hover:rotate-45 group-hover:scale-110'
                       }`}>
                         <ArrowUpRight className="w-4 h-4 transition-transform duration-300" />
                       </div>

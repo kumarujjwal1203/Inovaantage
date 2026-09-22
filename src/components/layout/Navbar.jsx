@@ -63,7 +63,7 @@ export function Navbar() {
       <header
         className={`fixed top-0 inset-x-0 z-40 transition-all duration-400 ${
           isScrolled
-            ? 'py-3.5 bg-[#080811]/80 backdrop-blur-xl border-b border-white/10 shadow-2xl shadow-black/50'
+            ? 'py-3.5 bg-white/90 backdrop-blur-xl border-b border-slate-200/80 shadow-md shadow-slate-900/5'
             : 'py-6 bg-transparent'
         }`}
       >
@@ -72,7 +72,7 @@ export function Navbar() {
           <Logo size="md" showTagline={!isScrolled} />
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-1 bg-white/[0.03] p-1.5 rounded-full border border-white/[0.08] backdrop-blur-md">
+          <nav className="hidden md:flex items-center gap-1 bg-slate-100/80 p-1.5 rounded-full border border-slate-200/80 backdrop-blur-md shadow-sm">
             {navLinks.map((link) => {
               const isActive = location.pathname === link.path || (link.path !== '/' && location.pathname.startsWith(link.path));
               return (
@@ -82,14 +82,14 @@ export function Navbar() {
                   className={({ isActive: isExactActive }) => {
                     const active = link.path === '/' ? isExactActive : isActive;
                     return `relative px-4 py-2 text-sm font-medium transition-colors duration-300 rounded-full ${
-                      active ? 'text-white font-semibold' : 'text-slate-400 hover:text-white'
+                      active ? 'text-[#FF6B00] font-bold' : 'text-slate-700 hover:text-[#FF6B00]'
                     }`;
                   }}
                 >
                   {(link.path === '/' ? location.pathname === '/' : isActive) && (
                     <motion.div
                       layoutId="navPill"
-                      className="absolute inset-0 bg-gradient-to-r from-[#FF6B00]/25 via-cyan-electric/20 to-violet-glow/20 border border-[#FF6B00]/40 rounded-full"
+                      className="absolute inset-0 bg-white border border-[#FF6B00]/40 rounded-full shadow-sm"
                       transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                     />
                   )}
@@ -102,7 +102,7 @@ export function Navbar() {
           {/* CTA Button */}
           <div className="hidden md:flex items-center gap-4">
             <Button to="/contact" variant="primary" size="sm" showIcon showIconPosition="right">
-              Get Started
+              Request a Demo
             </Button>
           </div>
 
@@ -110,7 +110,7 @@ export function Navbar() {
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle Navigation Menu"
-            className="md:hidden relative z-50 p-2.5 rounded-xl bg-white/5 border border-white/10 text-slate-200 hover:text-white hover:bg-white/10 transition-colors"
+            className="md:hidden relative z-50 p-2.5 rounded-xl bg-slate-100 border border-slate-200 text-slate-800 hover:bg-slate-200 transition-colors"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -125,10 +125,10 @@ export function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-30 bg-[#050507]/95 backdrop-blur-2xl flex flex-col justify-center px-6 sm:px-12 md:hidden overflow-y-auto pt-24 pb-12"
+            className="fixed inset-0 z-30 bg-white/98 backdrop-blur-2xl flex flex-col justify-center px-6 sm:px-12 md:hidden overflow-y-auto pt-24 pb-12"
           >
             {/* Subtle background glow */}
-            <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-72 h-72 rounded-full bg-[#FF6B00]/15 blur-3xl pointer-events-none" />
+            <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-72 h-72 rounded-full bg-[#FF6B00]/10 blur-3xl pointer-events-none" />
 
             <div className="flex flex-col space-y-4 max-w-sm w-full mx-auto">
               {navLinks.map((link, index) => (
@@ -144,8 +144,8 @@ export function Navbar() {
                     onClick={() => setMobileMenuOpen(false)}
                     className={`block text-2xl font-bold font-heading py-2.5 px-4 rounded-2xl transition-all ${
                       location.pathname === link.path
-                        ? 'text-[#FF6B00] bg-white/5 border border-[#FF6B00]/30'
-                        : 'text-slate-300 hover:text-white hover:bg-white/5'
+                        ? 'text-[#FF6B00] bg-orange-50 border border-[#FF6B00]/30'
+                        : 'text-slate-800 hover:text-[#FF6B00] hover:bg-slate-100'
                     }`}
                   >
                     {link.name}

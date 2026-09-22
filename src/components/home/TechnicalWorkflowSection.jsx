@@ -31,10 +31,10 @@ const workflowSteps = [
 
 export function TechnicalWorkflowSection() {
   return (
-    <section id="workflow" className="relative bg-[#050507] py-28 border-b border-white/10 select-none overflow-hidden">
+    <section id="workflow" className="relative bg-[#FAFAFD] py-28 border-b border-slate-200 select-none overflow-hidden">
       {/* Ambient background glows */}
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 rounded-full bg-[#FF6B00]/10 blur-[160px] pointer-events-none" />
-      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-96 h-96 rounded-full bg-[#7B61FF]/10 blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-96 h-96 rounded-full bg-[#FF8800]/10 blur-[160px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header Block */}
@@ -43,15 +43,15 @@ export function TechnicalWorkflowSection() {
             <span className="w-1.5 h-1.5 rounded-full bg-[#FF6B00] animate-ping" />
             HOW WE WORK
           </div>
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight font-heading leading-tight">
-            Technical <span className="bg-gradient-to-r from-[#FF6B00] via-[#FF8800] to-amber-400 bg-clip-text text-transparent">Workflow</span>
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight font-heading leading-tight">
+            Technical <span className="text-gradient">Workflow</span>
           </h2>
         </div>
 
         {/* Workflow Timeline Block */}
         <div className="relative">
           {/* Desktop/Tablet Horizontal Connecting Line behind circle nodes */}
-          <div className="hidden md:block absolute top-[36px] left-[8%] right-[8%] h-0.5 bg-gradient-to-r from-[#FF6B00]/30 via-[#FF6B00] to-amber-400/30 z-0" />
+          <div className="hidden md:block absolute top-[36px] left-[8%] right-[8%] h-0.5 bg-gradient-to-r from-[#FF6B00]/30 via-[#FF6B00] to-[#FF8800]/30 z-0" />
 
           {/* Staggered Grid of 4 Steps */}
           <motion.div
@@ -82,25 +82,25 @@ export function TechnicalWorkflowSection() {
                   {/* Glowing Circular Icon Node */}
                   <div className="relative mb-6">
                     {/* Pulsing ring aura on hover */}
-                    <div className="absolute inset-0 rounded-full bg-[#FF6B00]/30 blur-md group-hover:scale-125 transition-transform duration-300" />
+                    <div className="absolute inset-0 rounded-full bg-[#FF6B00]/20 blur-md group-hover:scale-125 transition-transform duration-300" />
                     
-                    <div className="relative w-18 h-18 sm:w-20 sm:h-20 rounded-full bg-[#080811] border-2 border-[#FF6B00]/60 group-hover:border-[#FF6B00] flex items-center justify-center text-[#FF6B00] group-hover:text-white transition-colors duration-300 shadow-xl shadow-[#FF6B00]/20">
+                    <div className="relative w-18 h-18 sm:w-20 sm:h-20 rounded-full bg-white border-2 border-[#FF6B00] flex items-center justify-center text-[#FF6B00] group-hover:bg-[#FF6B00] group-hover:text-white transition-colors duration-300 shadow-xl shadow-[#FF6B00]/15">
                       <IconComp className="w-7 h-7 sm:w-8 sm:h-8 group-hover:scale-110 transition-transform duration-300" />
                     </div>
 
                     {/* Step Number Tag */}
-                    <span className="absolute -top-1 -right-1 px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-[#FF6B00] text-black shadow-md">
+                    <span className="absolute -top-1 -right-1 px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-[#FF6B00] text-white shadow-md">
                       {step.num}
                     </span>
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl font-bold font-heading text-white mb-2.5 group-hover:text-[#FF6B00] transition-colors">
+                  <h3 className="text-xl font-bold font-heading text-slate-900 mb-2.5 group-hover:text-[#FF6B00] transition-colors">
                     {step.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-xs sm:text-sm text-slate-300 font-normal leading-relaxed max-w-xs">
+                  <p className="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed max-w-xs">
                     {step.desc}
                   </p>
                 </motion.div>
