@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ShieldAlert, CheckCircle2, Radio, Truck, Network, Database } from 'lucide-react';
-import { UtilityNetworkWatermark } from '../common/GisUtilityBackgroundWatermarks';
+
 
 const challengeSolutionData = [
   {
@@ -45,8 +45,7 @@ const challengeSolutionData = [
 export function WhyInovaantageSection() {
   return (
     <section id="why-inovaantage" className="relative bg-[#FAFAFD] py-28 border-b border-slate-200 select-none overflow-hidden">
-      {/* Utility Network Power Grid Topology Watermark */}
-      <UtilityNetworkWatermark position="top-right" className="opacity-20" />
+
 
       {/* Background ambient radial light */}
       <div className="absolute top-1/4 left-1/3 w-96 h-96 rounded-full bg-[#FF6B00]/10 blur-[170px] pointer-events-none" />

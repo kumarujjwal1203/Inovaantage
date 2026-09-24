@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import * as THREE from 'three';
 import { Logo } from '../common/Logo';
 import { CanvasErrorBoundary } from '../common/CanvasErrorBoundary';
-import { TopoContourWatermark, UtilityNetworkWatermark } from '../common/GisUtilityBackgroundWatermarks';
+
 
 // 3D Floating Wireframe Mascot Object
 function FloatingMascot3D() {
@@ -97,9 +97,7 @@ export function FooterMascotSection() {
   };
   return (
     <footer className="relative bg-[#FAFAFD] pt-24 pb-12 border-t border-slate-200 overflow-hidden text-slate-700">
-      {/* GIS Topography & Utility Network Background Watermarks */}
-      <TopoContourWatermark position="bottom-right" className="opacity-15" />
-      <UtilityNetworkWatermark position="top-left" className="opacity-15" />
+
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="rounded-3xl p-8 sm:p-12 border border-slate-200 relative overflow-hidden mb-16 shadow-2xl bg-white">

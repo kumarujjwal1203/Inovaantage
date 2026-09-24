@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUpRight, Network, Database, Activity, Radio, Sparkles } from 'lucide-react';
 import * as THREE from 'three';
 import { CanvasErrorBoundary } from '../common/CanvasErrorBoundary';
-import { UtilityNetworkWatermark, TopoContourWatermark } from '../common/GisUtilityBackgroundWatermarks';
+
 
 const capabilitiesCardsData = [
   {
@@ -223,9 +223,7 @@ export function ServicesParticleMorph() {
 
   return (
     <section id="services" className="relative py-28 bg-[#FAFAFD] border-t border-slate-200 select-none overflow-hidden">
-      {/* GIS & Utility Network Background Watermarks */}
-      <UtilityNetworkWatermark position="bottom-left" className="opacity-20" />
-      <TopoContourWatermark position="top-right" className="opacity-15" />
+
 
       {/* Ambient background glows */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-[#FF6B00]/10 blur-[150px] pointer-events-none" />

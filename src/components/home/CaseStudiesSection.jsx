@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUpRight, Database, Globe, Network, Cpu, ShieldCheck, Zap, Activity, Server, Radio } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { RUNrMigrationPlatformCard } from '../common/RUNrMigrationPlatformCard';
-import { TopoContourWatermark, SpatialReticleWatermark } from '../common/GisUtilityBackgroundWatermarks';
+
 
 const caseStudiesData = [
   {
@@ -236,9 +236,7 @@ export function CaseStudiesSection() {
 
   return (
     <section id="work" className="relative bg-[#FAFAFD] py-28 border-b border-slate-200 select-none overflow-hidden">
-      {/* Spatial Reticle & GIS Coordinates Watermark */}
-      <SpatialReticleWatermark position="top-right" className="opacity-15" />
-      <TopoContourWatermark position="bottom-left" className="opacity-15" />
+
 
       {/* Ambient background glows */}
       <div className="absolute top-1/3 left-0 w-[500px] h-[500px] rounded-full bg-[#FF6B00]/10 blur-[160px] pointer-events-none" />

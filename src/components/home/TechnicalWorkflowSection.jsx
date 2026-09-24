@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Search, MapPin, Database, Rocket, Workflow } from 'lucide-react';
-import { TopoContourWatermark, UtilityNetworkWatermark } from '../common/GisUtilityBackgroundWatermarks';
+
 
 const workflowSteps = [
   {
@@ -33,9 +33,7 @@ const workflowSteps = [
 export function TechnicalWorkflowSection() {
   return (
     <section id="workflow" className="relative bg-[#FAFAFD] py-28 border-b border-slate-200 select-none overflow-hidden">
-      {/* GIS & Utility Network Background Watermarks */}
-      <TopoContourWatermark position="center" className="opacity-15" />
-      <UtilityNetworkWatermark position="bottom-right" className="opacity-15" />
+
 
       {/* Ambient background glows */}
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 rounded-full bg-[#FF6B00]/10 blur-[160px] pointer-events-none" />

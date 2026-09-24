@@ -6,7 +6,7 @@ import { ArrowRight, Cpu, Radio, Database, Layers } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import * as THREE from 'three';
 import { CanvasErrorBoundary } from '../common/CanvasErrorBoundary';
-import { TopoContourWatermark, SpatialReticleWatermark } from '../common/GisUtilityBackgroundWatermarks';
+
 
 // 3D Digital GIS Earth Globe Particle Component (Dark Orange Palette)
 function FocusedSphereGlobe3D() {
@@ -257,9 +257,7 @@ export function HeroSection() {
       {/* GIS Spatial Technical Grid Background Overlay */}
       <div className="absolute inset-0 gis-grid-pattern opacity-25 pointer-events-none" />
 
-      {/* GIS Topographic Contour & Spatial Reticle Vector Watermarks */}
-      <TopoContourWatermark position="top-left" className="opacity-20" />
-      <SpatialReticleWatermark position="bottom-right" className="opacity-15" />
+
 
       {/* Ambient soft background glows */}
       <div className="absolute top-1/4 left-10 w-72 sm:w-96 h-72 sm:h-96 rounded-full bg-[#FF6B00]/8 blur-[160px] pointer-events-none" />
