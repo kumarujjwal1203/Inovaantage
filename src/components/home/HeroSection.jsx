@@ -6,6 +6,7 @@ import { ArrowRight, Cpu, Radio, Database, Layers } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import * as THREE from 'three';
 import { CanvasErrorBoundary } from '../common/CanvasErrorBoundary';
+import { TopoContourWatermark, SpatialReticleWatermark } from '../common/GisUtilityBackgroundWatermarks';
 
 // 3D Digital GIS Earth Globe Particle Component (Dark Orange Palette)
 function FocusedSphereGlobe3D() {
@@ -15,7 +16,7 @@ function FocusedSphereGlobe3D() {
   const radius = 1.8;
 
   // Procedural Canvas Dot Texture for smooth particle points
-  const dotTexture = useMemo(() => {
+  const circleTexture = useMemo(() => {
     if (typeof document === 'undefined') return null;
     const canvas = document.createElement('canvas');
     canvas.width = 64;
@@ -171,7 +172,7 @@ function FocusedSphereGlobe3D() {
         </bufferGeometry>
         <pointsMaterial
           size={0.052}
-          map={dotTexture}
+          map={circleTexture}
           vertexColors
           transparent
           opacity={0.95}
@@ -255,6 +256,10 @@ export function HeroSection() {
     <section className="relative min-h-[88vh] flex flex-col justify-between pt-24 sm:pt-28 pb-8 overflow-hidden select-none bg-[#FAFAFD]">
       {/* GIS Spatial Technical Grid Background Overlay */}
       <div className="absolute inset-0 gis-grid-pattern opacity-25 pointer-events-none" />
+
+      {/* GIS Topographic Contour & Spatial Reticle Vector Watermarks */}
+      <TopoContourWatermark position="top-left" className="opacity-20" />
+      <SpatialReticleWatermark position="bottom-right" className="opacity-15" />
 
       {/* Ambient soft background glows */}
       <div className="absolute top-1/4 left-10 w-72 sm:w-96 h-72 sm:h-96 rounded-full bg-[#FF6B00]/8 blur-[160px] pointer-events-none" />
@@ -341,7 +346,7 @@ export function HeroSection() {
                   key={chip.label}
                   animate={{ y: [-4, 4, -4] }}
                   transition={{ duration: 4.5 + idx, ease: 'easeInOut', repeat: Infinity, delay: idx * 0.4 }}
-                  className={`absolute ${chip.pos} z-10 hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full border text-[10px] sm:text-[11px] font-mono font-bold shadow-md backdrop-blur-md pointer-events-none ${chip.color}`}
+                  className={`absolute ${chip.pos} z-10 hidden sm:flex items-center gap-2 px-3.5 py-1.5 rounded-full border text-[10px] sm:text-[11px] font-mono font-bold shadow-md backdrop-blur-md pointer-events-none ${chip.color}`}
                 >
                   <IconComponent className="w-3.5 h-3.5" />
                   <span>{chip.label}</span>

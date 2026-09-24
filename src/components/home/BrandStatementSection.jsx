@@ -1,10 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Cpu, Shield, Zap, Sparkles, Layers, Code2 } from 'lucide-react';
+import { TopoContourWatermark } from '../common/GisUtilityBackgroundWatermarks';
 
 export function BrandStatementSection() {
   return (
     <section className="relative bg-[#FAFAFD] py-28 border-b border-slate-200 overflow-hidden">
+      {/* Topographic Contour Watermark Background */}
+      <TopoContourWatermark position="center" className="opacity-20" />
+
       {/* Background ambient radial light */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-gradient-to-r from-[#FF6B00]/10 to-[#FF8800]/10 blur-[200px] pointer-events-none" />
 
