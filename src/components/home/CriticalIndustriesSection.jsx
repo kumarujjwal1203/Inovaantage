@@ -1,9 +1,31 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Radio, Zap, Truck, Check, ArrowRight, ShieldCheck, Globe2 } from 'lucide-react';
+import { Radio, Zap, Truck, Flame, Check, ArrowRight, ShieldCheck, Globe2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const industriesData = [
+  {
+    id: 'oil-and-gas',
+    tabLabel: 'Oil & Gas',
+    tabIcon: Flame,
+    badgeEmoji: '🔥',
+    heading: 'Oil & Gas Pipeline Intelligence',
+    description: 'Transmission pipeline GIS, Esri Gas Utility Network, SCADA telemetry integration, and Pipeline Integrity Management Systems (PIMS).',
+    checklist: [
+      'Transmission pipeline GIS & alignment sheets',
+      'Esri Utility Network (UPDM/PODS) migration',
+      'SCADA & IoT real-time pressure telemetry',
+      'PIMS cathodic protection & ILI pigging analytics'
+    ],
+    stats: [
+      { value: '10,000+', label: 'KM Pipeline Mapped' },
+      { value: '99.9%', label: 'Topology Accuracy' }
+    ],
+    previewIcon: Flame,
+    gradient: 'from-[#FF6B00]/25 via-amber-500/10 to-transparent',
+    accentColor: '#FF6B00',
+    link: '/oil-and-gas'
+  },
   {
     id: 'telecom',
     tabLabel: 'Telecom',
@@ -23,7 +45,8 @@ const industriesData = [
     ],
     previewIcon: Radio,
     gradient: 'from-[#FF6B00]/20 via-[#7B61FF]/10 to-transparent',
-    accentColor: '#FF6B00'
+    accentColor: '#FF6B00',
+    link: '/contact'
   },
   {
     id: 'utilities',
@@ -44,7 +67,8 @@ const industriesData = [
     ],
     previewIcon: Zap,
     gradient: 'from-amber-500/20 via-[#FF6B00]/10 to-transparent',
-    accentColor: '#FF8800'
+    accentColor: '#FF8800',
+    link: '/services'
   },
   {
     id: 'transportation',
@@ -65,12 +89,13 @@ const industriesData = [
     ],
     previewIcon: Truck,
     gradient: 'from-cyan-electric/20 via-[#7B61FF]/10 to-transparent',
-    accentColor: '#00F0FF'
+    accentColor: '#00F0FF',
+    link: '/contact'
   }
 ];
 
 export function CriticalIndustriesSection() {
-  const [activeTab, setActiveTab] = useState('telecom');
+  const [activeTab, setActiveTab] = useState('oil-and-gas');
   const activeIndustry = industriesData.find((item) => item.id === activeTab) || industriesData[0];
 
   return (
@@ -155,10 +180,10 @@ export function CriticalIndustriesSection() {
               {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-4 pt-6 border-t border-slate-200">
                 <Link
-                  to="/services"
+                  to={activeIndustry.link}
                   className="px-6 py-3.5 rounded-full bg-[#FF6B00] hover:bg-[#ff8533] text-white font-bold font-mono text-sm transition-all shadow-lg shadow-[#FF6B00]/25 flex items-center gap-2 group"
                 >
-                  <span>Explore Services</span>
+                  <span>Explore Vertical</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link

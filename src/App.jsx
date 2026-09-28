@@ -20,6 +20,7 @@ import { ProjectDetail } from './pages/ProjectDetail';
 import { Blog } from './pages/Blog';
 import { BlogDetail } from './pages/BlogDetail';
 import { Contact } from './pages/Contact';
+import { OilAndGas } from './pages/OilAndGas';
 import { NotFound } from './pages/NotFound';
 
 // Scroll to top on route change helper
@@ -59,6 +60,8 @@ export function App() {
             <Route path="/about" element={<PageTransition><About /></PageTransition>} />
             <Route path="/services" element={<PageTransition><Services /></PageTransition>} />
             <Route path="/services/:serviceId" element={<PageTransition><ServiceDetail /></PageTransition>} />
+            <Route path="/oil-and-gas" element={<PageTransition><OilAndGas /></PageTransition>} />
+            <Route path="/verticals/oil-and-gas" element={<PageTransition><OilAndGas /></PageTransition>} />
             <Route path="/portfolio" element={<PageTransition><Portfolio /></PageTransition>} />
             <Route path="/portfolio/:projectId" element={<PageTransition><ProjectDetail /></PageTransition>} />
             <Route path="/blog" element={<PageTransition><Blog /></PageTransition>} />

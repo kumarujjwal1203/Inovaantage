@@ -83,12 +83,13 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Services */}
+          {/* Column 3: Services & Verticals */}
           <div>
             <h4 className="text-sm font-bold uppercase tracking-wider text-slate-900 font-heading mb-4">
-              Services
+              Services & Verticals
             </h4>
             <ul className="space-y-2.5 text-sm font-medium">
+              <li><Link to="/oil-and-gas" className="hover:text-[#FF6B00] transition-colors font-bold text-slate-900">Oil & Gas Vertical</Link></li>
               <li><Link to="/services" className="hover:text-[#FF6B00] transition-colors">Managed Services</Link></li>
               <li><Link to="/services" className="hover:text-[#FF6B00] transition-colors">Geospatial (GIS) Services</Link></li>
               <li><Link to="/services" className="hover:text-[#FF6B00] transition-colors">GIS Data Management</Link></li>
