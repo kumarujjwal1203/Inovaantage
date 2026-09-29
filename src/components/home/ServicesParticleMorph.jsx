@@ -1,6 +1,7 @@
 import React, { useRef, useMemo, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import { ArrowUpRight, Network, Database, Activity, Radio, Sparkles } from 'lucide-react';
 import * as THREE from 'three';
 import { CanvasErrorBoundary } from '../common/CanvasErrorBoundary';
@@ -124,7 +125,7 @@ function generateTextParticlePositions(text, count = 3600) {
 }
 
 // 3D Particle Cloud component with particle morphing to 3D Volumetric typography
-function MorphingParticleCloud({ activeShape }) {
+function MorphingParticleCloud({ activeShape, isVisible = true }) {
   const pointsRef = useRef();
   const count = 3600;
 
@@ -170,7 +171,7 @@ function MorphingParticleCloud({ activeShape }) {
 
   // Frame animation & position LERP
   useFrame((state, delta) => {
-    if (!pointsRef.current) return;
+    if (!isVisible || !pointsRef.current) return;
     const targetIndex = activeShape !== null ? activeShape % shapes.length : 0;
     const targetArr = shapes[targetIndex];
     const posArr = pointsRef.current.geometry.attributes.position.array;
@@ -215,6 +216,7 @@ function MorphingParticleCloud({ activeShape }) {
 }
 
 export function ServicesParticleMorph() {
+  const { ref, inView } = useInView({ threshold: 0.05 });
   const [selectedShape, setSelectedShape] = useState(null);
   const [hoveredShape, setHoveredShape] = useState(null);
 
@@ -222,7 +224,7 @@ export function ServicesParticleMorph() {
   const currentCardData = capabilitiesCardsData[activeShape] || capabilitiesCardsData[0];
 
   return (
-    <section id="services" className="relative py-28 bg-[#FAFAFD] border-t border-slate-200 select-none overflow-hidden">
+    <section ref={ref} id="services" className="relative py-28 bg-[#FAFAFD] border-t border-slate-200 select-none overflow-hidden">
 
 
       {/* Ambient background glows */}
@@ -263,7 +265,7 @@ export function ServicesParticleMorph() {
               <CanvasErrorBoundary>
                 <Canvas camera={{ position: [0, 0, 5], fov: 55 }}>
                   <ambientLight intensity={0.8} />
-                  <MorphingParticleCloud activeShape={activeShape} />
+                  <MorphingParticleCloud activeShape={activeShape} isVisible={inView} />
                 </Canvas>
               </CanvasErrorBoundary>
             </div>

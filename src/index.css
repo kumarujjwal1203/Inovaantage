@@ -5,8 +5,7 @@
 @layer base {
   html {
     color-scheme: light;
-    scroll-behavior: smooth;
-    overflow-x: hidden;
+    overflow-x: clip;
     width: 100%;
   }
   
@@ -18,7 +17,7 @@
       radial-gradient(circle at 85% 35%, rgba(255, 107, 0, 0.05) 0%, transparent 45%),
       radial-gradient(circle at 15% 75%, rgba(255, 136, 0, 0.04) 0%, transparent 50%);
     background-attachment: fixed;
-    overflow-x: hidden;
+    overflow-x: clip;
     width: 100%;
     margin: 0;
     padding: 0;

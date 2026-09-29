@@ -5,9 +5,9 @@ export function Reveal({
   children,
   width = 'w-full',
   delay = 0,
-  duration = 0.6,
-  yOffset = 24,
-  blur = true,
+  duration = 0.5,
+  yOffset = 20,
+  blur = false,
   className = ''
 }) {
   const shouldReduceMotion = useReducedMotion();
@@ -21,23 +21,24 @@ export function Reveal({
       <motion.div
         initial={{
           opacity: 0,
-          y: yOffset,
-          filter: blur ? 'blur(6px)' : 'none'
+          y: yOffset
         }}
         whileInView={{
           opacity: 1,
-          y: 0,
-          filter: 'blur(0px)'
+          y: 0
         }}
-        viewport={{ once: true, margin: '-60px' }}
+        viewport={{ once: true, margin: '-40px' }}
         transition={{
           duration,
           delay,
-          ease: [0.16, 1, 0.3, 1]
+          ease: [0.22, 1, 0.36, 1]
         }}
+        className="transform-gpu will-change-transform"
       >
         {children}
       </motion.div>
     </div>
   );
 }
+
+export default React.memo(Reveal);

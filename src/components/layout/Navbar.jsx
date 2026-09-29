@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
@@ -18,24 +18,31 @@ const navLinks = [
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
+  const scrolledRef = useRef(false);
   const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+    let ticking = false;
 
-      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-      if (totalHeight > 0) {
-        setScrollProgress((window.scrollY / totalHeight) * 100);
+    const checkScroll = () => {
+      const scrolled = window.scrollY > 20;
+      if (scrolled !== scrolledRef.current) {
+        scrolledRef.current = scrolled;
+        setIsScrolled(scrolled);
+      }
+      ticking = false;
+    };
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(checkScroll);
+        ticking = true;
       }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
+    checkScroll();
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -67,12 +74,6 @@ export function Navbar() {
 
   return (
     <>
-      {/* Top Scroll Progress Indicator */}
-      <div
-        className="fixed top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#FF4500] via-[#FF6B00] to-[#FF8800] z-50 origin-left transition-all duration-75 shadow-xs"
-        style={{ width: `${scrollProgress}%` }}
-      />
-
       <header
         className={`fixed top-0 inset-x-0 z-40 transition-all duration-400 ${
           isScrolled

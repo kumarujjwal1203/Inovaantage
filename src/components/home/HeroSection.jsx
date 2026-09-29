@@ -9,7 +9,7 @@ import { CanvasErrorBoundary } from '../common/CanvasErrorBoundary';
 
 
 // 3D Digital GIS Earth Globe Particle Component (Dark Orange Palette)
-function FocusedSphereGlobe3D() {
+function FocusedSphereGlobe3D({ isVisible = true }) {
   const globeGroupRef = useRef();
   const orbitGroupRef = useRef();
 
@@ -142,7 +142,7 @@ function FocusedSphereGlobe3D() {
 
   // Frame Animation: Rotate Earth Globe smoothly & tilt 23.5°
   useFrame((state) => {
-    if (!globeGroupRef.current) return;
+    if (!isVisible || !globeGroupRef.current) return;
     const t = state.clock.getElapsedTime();
     const pointer = state.pointer;
 
@@ -252,8 +252,10 @@ const gisChips = [
 ];
 
 export function HeroSection() {
+  const { ref, inView } = useInView({ threshold: 0.05 });
+
   return (
-    <section className="relative min-h-[88vh] flex flex-col justify-between pt-24 sm:pt-28 pb-8 overflow-hidden select-none bg-[#FAFAFD]">
+    <section ref={ref} className="relative min-h-[88vh] flex flex-col justify-between pt-24 sm:pt-28 pb-8 overflow-hidden select-none bg-[#FAFAFD]">
       {/* GIS Spatial Technical Grid Background Overlay */}
       <div className="absolute inset-0 gis-grid-pattern opacity-25 pointer-events-none" />
 
@@ -332,7 +334,7 @@ export function HeroSection() {
             <CanvasErrorBoundary>
               <Canvas camera={{ position: [0, 0, 4.6], fov: 48 }}>
                 <ambientLight intensity={0.8} />
-                <FocusedSphereGlobe3D />
+                <FocusedSphereGlobe3D isVisible={inView} />
               </Canvas>
             </CanvasErrorBoundary>
 

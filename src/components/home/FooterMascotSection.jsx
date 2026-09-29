@@ -1,6 +1,7 @@
 import React, { useRef, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import { ArrowUp, Mail, Phone, MapPin, Zap, Linkedin, Twitter, Youtube } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import * as THREE from 'three';
@@ -9,7 +10,7 @@ import { CanvasErrorBoundary } from '../common/CanvasErrorBoundary';
 
 
 // 3D Floating Wireframe Mascot Object
-function FloatingMascot3D() {
+function FloatingMascot3D({ isVisible = true }) {
   const coreRef = useRef();
   const ring1Ref = useRef();
   const ring2Ref = useRef();
@@ -34,6 +35,7 @@ function FloatingMascot3D() {
   }, [count]);
 
   useFrame((state) => {
+    if (!isVisible) return;
     const t = state.clock.getElapsedTime();
     if (coreRef.current) {
       coreRef.current.rotation.y = t * 0.4;
@@ -87,6 +89,8 @@ const driftingTags = [
 ];
 
 export function FooterMascotSection() {
+  const { ref, inView } = useInView({ threshold: 0.05 });
+
   const scrollToTop = () => {
     try {
       window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
@@ -96,7 +100,7 @@ export function FooterMascotSection() {
     }
   };
   return (
-    <footer className="relative bg-[#FAFAFD] pt-24 pb-12 border-t border-slate-200 overflow-hidden text-slate-700">
+    <footer ref={ref} className="relative bg-[#FAFAFD] pt-24 pb-12 border-t border-slate-200 overflow-hidden text-slate-700">
 
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -129,7 +133,7 @@ export function FooterMascotSection() {
               <CanvasErrorBoundary>
                 <Canvas camera={{ position: [0, 0, 4.5], fov: 45 }}>
                   <ambientLight intensity={0.8} />
-                  <FloatingMascot3D />
+                  <FloatingMascot3D isVisible={inView} />
                 </Canvas>
               </CanvasErrorBoundary>
 

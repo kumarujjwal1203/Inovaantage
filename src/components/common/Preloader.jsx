@@ -62,12 +62,12 @@ export function Preloader() {
         this.isBranch = isBranch;
 
         this.points = [{ x: startX, y: startY }];
+        this.branches = [];
         this.generatePath();
         this.currentStep = 0;
         this.totalSteps = this.points.length;
         this.alpha = 1.0;
         this.decaying = false;
-        this.branches = [];
       }
 
       generatePath() {

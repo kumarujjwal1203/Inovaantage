@@ -143,7 +143,7 @@ function StickyCardItem({ card, index, totalCards, shouldReduceMotion }) {
       whileInView={shouldReduceMotion ? {} : { opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true, amount: 0.15 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className="sticky overflow-hidden rounded-[1.8rem] sm:rounded-[2.4rem] border-2 border-slate-200/90 bg-white p-5 sm:p-7 lg:p-9 shadow-xl transition-all duration-300 hover:border-[#FF6B00]/70 group cursor-default transform-gpu will-change-transform max-w-6xl mx-auto"
+      className="sticky overflow-hidden rounded-[1.8rem] sm:rounded-[2.4rem] border-2 border-slate-200/90 bg-white p-5 sm:p-7 lg:p-9 shadow-xl transition-colors duration-300 hover:border-[#FF6B00]/70 group cursor-default transform-gpu will-change-transform max-w-6xl mx-auto"
       style={{
         zIndex: 20 + index,
         top: `${5.5 + index * 2}rem`
