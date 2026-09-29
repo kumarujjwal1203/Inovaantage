@@ -233,27 +233,40 @@ export function OilAndGas() {
         </Reveal>
 
         {/* STICKY CARD STACK CONTAINER */}
-        <div className="relative space-y-12 pb-16">
+        <div className="relative space-y-16 pb-32">
           
           {/* SERVICE CARD 01 STICKY STACK */}
-          <div className="sticky top-28 md:top-32 z-10 transition-all duration-300">
-            <SpotlightCard className="p-8 sm:p-12 border-2 border-slate-200 bg-white shadow-2xl">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                
-                <div className="lg:col-span-2">
-                  <span className="text-6xl sm:text-7xl font-extrabold font-heading bg-gradient-to-br from-[#FF6B00] via-[#FF8800] to-slate-300 bg-clip-text text-transparent block select-none group-hover:scale-105 transition-transform">
-                    01
-                  </span>
-                  <div className="inline-block mt-2 px-3 py-1 rounded-full bg-orange-50 border border-[#FF6B00]/30 text-xs font-mono font-bold text-[#FF6B00] uppercase tracking-wider">
-                    E&P WORKFLOWS
+          <div className="sticky top-24 md:top-28 z-10 transition-all duration-300">
+            <SpotlightCard className="p-0 border-2 border-slate-200/90 bg-white shadow-2xl rounded-[32px] sm:rounded-[40px] overflow-hidden">
+              <div className="h-2 w-full bg-gradient-to-r from-[#FF6B00] via-[#FF8800] to-amber-400" />
+              
+              <div className="p-8 sm:p-12 space-y-8">
+                {/* CARD TOP HEADER BAR — REMAINS VISIBLE WHEN STACKED */}
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-200/80">
+                  <div className="flex items-center gap-4 sm:gap-6">
+                    <span className="text-5xl sm:text-6xl font-black font-heading bg-gradient-to-br from-[#FF6B00] via-[#FF8800] to-slate-400 bg-clip-text text-transparent block select-none">
+                      01
+                    </span>
+                    <div>
+                      <span className="text-xs font-mono font-bold text-[#FF6B00] uppercase tracking-widest block mb-1">
+                        E&P WORKFLOWS
+                      </span>
+                      <h3 className="text-2xl sm:text-3xl font-extrabold font-heading text-slate-900 tracking-tight">
+                        Domain Translation — Subsurface to Spatial
+                      </h3>
+                    </div>
+                  </div>
+                  
+                  <div className="shrink-0">
+                    <span className="px-4 py-2 rounded-full bg-orange-50 border border-[#FF6B00]/30 text-xs font-mono font-bold text-[#FF6B00] uppercase tracking-wider inline-flex items-center gap-2 shadow-xs">
+                      <Sparkles className="w-3.5 h-3.5 text-[#FF6B00]" />
+                      <span>E&P GIS INTEGRATION</span>
+                    </span>
                   </div>
                 </div>
 
-                <div className="lg:col-span-10 space-y-6">
-                  <h3 className="text-2xl sm:text-3xl font-bold font-heading text-slate-900 group-hover:text-[#FF6B00] transition-colors">
-                    Domain Translation — Subsurface to Spatial
-                  </h3>
-
+                {/* CARD CONTENT BODY */}
+                <div className="space-y-6">
                   <p className="text-base text-slate-600 leading-relaxed font-normal">
                     Complex subsurface information needs to be understood in the context of how exploration and production teams actually work. Our consultants bring knowledge of key E&P workflows—including seismic interpretation, well and log data, geological modelling, basin analysis and subsurface data management—and translate these requirements into robust spatial data frameworks.
                   </p>
@@ -287,7 +300,7 @@ export function OilAndGas() {
                   </div>
 
                   {/* Result Callout */}
-                  <div className="p-5 rounded-2xl bg-gradient-to-r from-orange-50/90 via-amber-50/60 to-orange-50/90 border-2 border-[#FF6B00]/30 shadow-md group-hover:border-[#FF6B00]/60 transition-all flex items-center gap-3">
+                  <div className="p-5 rounded-2xl bg-gradient-to-r from-orange-50/90 via-amber-50/60 to-orange-50/90 border-2 border-[#FF6B00]/30 shadow-md flex items-center gap-3">
                     <span className="px-2.5 py-1 rounded-md bg-[#FF6B00] text-white text-xs font-mono font-bold uppercase shrink-0 shadow-xs">RESULT</span>
                     <span className="text-sm text-slate-900 font-semibold">
                       A clear connection between subsurface interpretation and the spatial information used across the wider organization.
@@ -315,31 +328,44 @@ export function OilAndGas() {
                       ))}
                     </div>
                   </div>
-
                 </div>
+
               </div>
             </SpotlightCard>
           </div>
 
           {/* SERVICE CARD 02 STICKY STACK */}
-          <div className="sticky top-32 md:top-40 z-20 transition-all duration-300">
-            <SpotlightCard className="p-8 sm:p-12 border-2 border-slate-200 bg-white shadow-2xl">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                
-                <div className="lg:col-span-2">
-                  <span className="text-6xl sm:text-7xl font-extrabold font-heading bg-gradient-to-br from-[#FF6B00] via-[#FF8800] to-slate-300 bg-clip-text text-transparent block select-none group-hover:scale-105 transition-transform">
-                    02
-                  </span>
-                  <div className="inline-block mt-2 px-3 py-1 rounded-full bg-orange-50 border border-[#FF6B00]/30 text-xs font-mono font-bold text-[#FF6B00] uppercase tracking-wider">
-                    MULTIDISCIPLINARY DELIVERY
+          <div className="sticky top-48 md:top-56 z-20 transition-all duration-300">
+            <SpotlightCard className="p-0 border-2 border-slate-200/90 bg-white shadow-2xl rounded-[32px] sm:rounded-[40px] overflow-hidden">
+              <div className="h-2 w-full bg-gradient-to-r from-[#FF6B00] via-[#FF8800] to-amber-400" />
+              
+              <div className="p-8 sm:p-12 space-y-8">
+                {/* CARD TOP HEADER BAR — REMAINS VISIBLE WHEN STACKED */}
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-200/80">
+                  <div className="flex items-center gap-4 sm:gap-6">
+                    <span className="text-5xl sm:text-6xl font-black font-heading bg-gradient-to-br from-[#FF6B00] via-[#FF8800] to-slate-400 bg-clip-text text-transparent block select-none">
+                      02
+                    </span>
+                    <div>
+                      <span className="text-xs font-mono font-bold text-[#FF6B00] uppercase tracking-widest block mb-1">
+                        MULTIDISCIPLINARY DELIVERY
+                      </span>
+                      <h3 className="text-2xl sm:text-3xl font-extrabold font-heading text-slate-900 tracking-tight">
+                        Scalable Operations & Delivery
+                      </h3>
+                    </div>
+                  </div>
+                  
+                  <div className="shrink-0">
+                    <span className="px-4 py-2 rounded-full bg-orange-50 border border-[#FF6B00]/30 text-xs font-mono font-bold text-[#FF6B00] uppercase tracking-wider inline-flex items-center gap-2 shadow-xs">
+                      <Workflow className="w-3.5 h-3.5 text-[#FF6B00]" />
+                      <span>ENTERPRISE SCALING</span>
+                    </span>
                   </div>
                 </div>
 
-                <div className="lg:col-span-10 space-y-6">
-                  <h3 className="text-2xl sm:text-3xl font-bold font-heading text-slate-900 group-hover:text-[#FF6B00] transition-colors">
-                    Scalable Operations & Delivery
-                  </h3>
-
+                {/* CARD CONTENT BODY */}
+                <div className="space-y-6">
                   <p className="text-base text-slate-600 leading-relaxed font-normal">
                     Modern Oil & Gas data programs require collaboration across multiple specialist disciplines. Inovaantage can support the design and delivery of multidisciplinary teams spanning geoscience, GIS, data engineering and software development. We provide delivery leadership and technical oversight to help operators establish repeatable processes and scalable data architectures.
                   </p>
@@ -374,8 +400,8 @@ export function OilAndGas() {
                     </div>
                   </div>
 
-                  {/* Callout */}
-                  <div className="p-5 rounded-2xl bg-gradient-to-r from-orange-50/90 via-amber-50/60 to-orange-50/90 border-2 border-[#FF6B00]/30 shadow-md group-hover:border-[#FF6B00]/60 transition-all flex items-center gap-3">
+                  {/* Focus Callout */}
+                  <div className="p-5 rounded-2xl bg-gradient-to-r from-orange-50/90 via-amber-50/60 to-orange-50/90 border-2 border-[#FF6B00]/30 shadow-md flex items-center gap-3">
                     <span className="px-2.5 py-1 rounded-md bg-[#FF6B00] text-white text-xs font-mono font-bold uppercase shrink-0 shadow-xs">FOCUS</span>
                     <span className="text-sm text-slate-900 font-semibold">
                       We focus on building delivery models that can scale across assets, regions, disciplines and business units while maintaining consistency and data quality.
@@ -397,31 +423,44 @@ export function OilAndGas() {
                       ))}
                     </div>
                   </div>
-
                 </div>
+
               </div>
             </SpotlightCard>
           </div>
 
           {/* SERVICE CARD 03 STICKY STACK */}
-          <div className="sticky top-36 md:top-48 z-30 transition-all duration-300">
-            <SpotlightCard className="p-8 sm:p-12 border-2 border-slate-200 bg-white shadow-2xl">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                
-                <div className="lg:col-span-2">
-                  <span className="text-6xl sm:text-7xl font-extrabold font-heading bg-gradient-to-br from-[#FF6B00] via-[#FF8800] to-slate-300 bg-clip-text text-transparent block select-none group-hover:scale-105 transition-transform">
-                    03
-                  </span>
-                  <div className="inline-block mt-2 px-3 py-1 rounded-full bg-orange-50 border border-[#FF6B00]/30 text-xs font-mono font-bold text-[#FF6B00] uppercase tracking-wider">
-                    CLOUD ARCHITECTURE
+          <div className="sticky top-72 md:top-84 z-30 transition-all duration-300">
+            <SpotlightCard className="p-0 border-2 border-slate-200/90 bg-white shadow-2xl rounded-[32px] sm:rounded-[40px] overflow-hidden">
+              <div className="h-2 w-full bg-gradient-to-r from-[#FF6B00] via-[#FF8800] to-amber-400" />
+              
+              <div className="p-8 sm:p-12 space-y-8">
+                {/* CARD TOP HEADER BAR — REMAINS VISIBLE WHEN STACKED */}
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-200/80">
+                  <div className="flex items-center gap-4 sm:gap-6">
+                    <span className="text-5xl sm:text-6xl font-black font-heading bg-gradient-to-br from-[#FF6B00] via-[#FF8800] to-slate-400 bg-clip-text text-transparent block select-none">
+                      03
+                    </span>
+                    <div>
+                      <span className="text-xs font-mono font-bold text-[#FF6B00] uppercase tracking-widest block mb-1">
+                        CLOUD ARCHITECTURE
+                      </span>
+                      <h3 className="text-2xl sm:text-3xl font-extrabold font-heading text-slate-900 tracking-tight">
+                        Modern Spatial Data Infrastructure
+                      </h3>
+                    </div>
+                  </div>
+                  
+                  <div className="shrink-0">
+                    <span className="px-4 py-2 rounded-full bg-orange-50 border border-[#FF6B00]/30 text-xs font-mono font-bold text-[#FF6B00] uppercase tracking-wider inline-flex items-center gap-2 shadow-xs">
+                      <Cloud className="w-3.5 h-3.5 text-[#FF6B00]" />
+                      <span>CLOUD INFRASTRUCTURE</span>
+                    </span>
                   </div>
                 </div>
 
-                <div className="lg:col-span-10 space-y-6">
-                  <h3 className="text-2xl sm:text-3xl font-bold font-heading text-slate-900 group-hover:text-[#FF6B00] transition-colors">
-                    Modern Spatial Data Infrastructure
-                  </h3>
-
+                {/* CARD CONTENT BODY */}
+                <div className="space-y-6">
                   <p className="text-base text-slate-600 leading-relaxed font-normal">
                     Traditional subsurface mapping environments can be highly dependent on static datasets, desktop applications and fragmented workflows. We help Oil & Gas organizations modernize these environments by connecting subsurface data with cloud-based, automated and enterprise spatial data infrastructures.
                   </p>
@@ -456,8 +495,8 @@ export function OilAndGas() {
                     </div>
                   </div>
 
-                  {/* Callout */}
-                  <div className="p-5 rounded-2xl bg-gradient-to-r from-orange-50/90 via-amber-50/60 to-orange-50/90 border-2 border-[#FF6B00]/30 shadow-md group-hover:border-[#FF6B00]/60 transition-all flex items-center gap-3">
+                  {/* Objective Callout */}
+                  <div className="p-5 rounded-2xl bg-gradient-to-r from-orange-50/90 via-amber-50/60 to-orange-50/90 border-2 border-[#FF6B00]/30 shadow-md flex items-center gap-3">
                     <span className="px-2.5 py-1 rounded-md bg-[#FF6B00] text-white text-xs font-mono font-bold uppercase shrink-0 shadow-xs">OBJECTIVE</span>
                     <span className="text-sm text-slate-900 font-semibold">
                       The objective is to move from static maps and disconnected datasets to dynamic, governed and reusable spatial information.
@@ -465,6 +504,7 @@ export function OilAndGas() {
                   </div>
 
                 </div>
+
               </div>
             </SpotlightCard>
           </div>
