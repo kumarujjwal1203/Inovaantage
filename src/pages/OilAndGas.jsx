@@ -236,7 +236,13 @@ export function OilAndGas() {
         <div className="relative space-y-16 pb-32">
           
           {/* SERVICE CARD 01 STICKY STACK */}
-          <div className="sticky top-24 md:top-28 z-10 transition-all duration-300">
+          <motion.div 
+            initial={shouldReduceMotion ? {} : { opacity: 0, y: 60, scale: 0.98 }}
+            whileInView={shouldReduceMotion ? {} : { opacity: 1, y: 0, scale: 1 }}
+            viewport={{ margin: "-5% 0px", once: true }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="sticky top-24 md:top-28 z-10 transition-all duration-300"
+          >
             <SpotlightCard className="p-0 border-2 border-slate-200/90 bg-white shadow-2xl rounded-[32px] sm:rounded-[40px] overflow-hidden">
               <div className="h-2 w-full bg-gradient-to-r from-[#FF6B00] via-[#FF8800] to-amber-400" />
               
@@ -332,10 +338,16 @@ export function OilAndGas() {
 
               </div>
             </SpotlightCard>
-          </div>
+          </motion.div>
 
           {/* SERVICE CARD 02 STICKY STACK */}
-          <div className="sticky top-48 md:top-56 z-20 transition-all duration-300">
+          <motion.div 
+            initial={shouldReduceMotion ? {} : { opacity: 0, y: 60, scale: 0.98 }}
+            whileInView={shouldReduceMotion ? {} : { opacity: 1, y: 0, scale: 1 }}
+            viewport={{ margin: "-5% 0px", once: true }}
+            transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            className="sticky top-48 md:top-56 z-20 transition-all duration-300"
+          >
             <SpotlightCard className="p-0 border-2 border-slate-200/90 bg-white shadow-2xl rounded-[32px] sm:rounded-[40px] overflow-hidden">
               <div className="h-2 w-full bg-gradient-to-r from-[#FF6B00] via-[#FF8800] to-amber-400" />
               
@@ -427,10 +439,16 @@ export function OilAndGas() {
 
               </div>
             </SpotlightCard>
-          </div>
+          </motion.div>
 
           {/* SERVICE CARD 03 STICKY STACK */}
-          <div className="sticky top-72 md:top-84 z-30 transition-all duration-300">
+          <motion.div 
+            initial={shouldReduceMotion ? {} : { opacity: 0, y: 60, scale: 0.98 }}
+            whileInView={shouldReduceMotion ? {} : { opacity: 1, y: 0, scale: 1 }}
+            viewport={{ margin: "-5% 0px", once: true }}
+            transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="sticky top-72 md:top-84 z-30 transition-all duration-300"
+          >
             <SpotlightCard className="p-0 border-2 border-slate-200/90 bg-white shadow-2xl rounded-[32px] sm:rounded-[40px] overflow-hidden">
               <div className="h-2 w-full bg-gradient-to-r from-[#FF6B00] via-[#FF8800] to-amber-400" />
               
@@ -507,7 +525,7 @@ export function OilAndGas() {
 
               </div>
             </SpotlightCard>
-          </div>
+          </motion.div>
 
         </div>
       </section>
