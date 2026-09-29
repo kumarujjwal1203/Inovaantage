@@ -15,7 +15,8 @@ import {
   Zap, 
   Server,
   ArrowDown,
-  RefreshCw
+  RefreshCw,
+  Sparkles
 } from 'lucide-react';
 import { Reveal } from '../components/common/Reveal';
 import { SpotlightCard } from '../components/common/SpotlightCard';
@@ -125,8 +126,8 @@ export function OilAndGas() {
 
             {/* Highlight Box */}
             <Reveal delay={0.3} yOffset={20}>
-              <div className="p-6 rounded-2xl bg-white border border-[#FF6B00]/30 shadow-lg shadow-[#FF6B00]/05 relative overflow-hidden">
-                <div className="absolute top-0 left-0 bottom-0 w-1.5 bg-[#FF6B00]" />
+              <div className="p-6 rounded-2xl bg-white border border-[#FF6B00]/30 shadow-lg shadow-[#FF6B00]/05 relative overflow-hidden group hover:border-[#FF6B00] transition-colors">
+                <div className="absolute top-0 left-0 bottom-0 w-1.5 bg-gradient-to-b from-[#FF6B00] to-[#FF8800]" />
                 <p className="text-sm sm:text-base font-semibold font-heading text-slate-900 leading-relaxed pl-2">
                   Inovaantage helps Oil & Gas organizations bridge the gap between subsurface science, spatial data and modern technology.
                 </p>
@@ -216,7 +217,7 @@ export function OilAndGas() {
 
 
       {/* ------------------------------------------------------------- */}
-      {/* 03 — OIL & GAS CONSULTING SERVICES */}
+      {/* 03 — OIL & GAS CONSULTING SERVICES WITH 3D LAYERED MOTION CARDS */}
       {/* ------------------------------------------------------------- */}
       <section id="services" className="py-24 lg:py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         
@@ -235,20 +236,20 @@ export function OilAndGas() {
           
           {/* SERVICE 01 */}
           <Reveal yOffset={30}>
-            <SpotlightCard className="p-8 sm:p-12 border-slate-200 bg-white shadow-xl">
+            <SpotlightCard className="p-8 sm:p-12 border-slate-200 bg-white">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 
                 <div className="lg:col-span-2">
-                  <span className="text-6xl sm:text-7xl font-extrabold font-heading text-slate-200 block select-none">
+                  <span className="text-6xl sm:text-7xl font-extrabold font-heading bg-gradient-to-br from-[#FF6B00] via-[#FF8800] to-slate-300 bg-clip-text text-transparent block select-none group-hover:scale-105 transition-transform">
                     01
                   </span>
-                  <div className="inline-block mt-2 text-xs font-mono font-bold text-[#FF6B00] uppercase tracking-wider">
+                  <div className="inline-block mt-2 px-3 py-1 rounded-full bg-orange-50 border border-[#FF6B00]/30 text-xs font-mono font-bold text-[#FF6B00] uppercase tracking-wider">
                     E&P WORKFLOWS
                   </div>
                 </div>
 
                 <div className="lg:col-span-10 space-y-6">
-                  <h3 className="text-2xl sm:text-3xl font-bold font-heading text-slate-900">
+                  <h3 className="text-2xl sm:text-3xl font-bold font-heading text-slate-900 group-hover:text-[#FF6B00] transition-colors">
                     Domain Translation — Subsurface to Spatial
                   </h3>
 
@@ -257,10 +258,11 @@ export function OilAndGas() {
                   </p>
 
                   <div className="pt-2">
-                    <h4 className="text-sm font-bold font-mono text-slate-900 uppercase tracking-wider mb-4">
-                      We help organizations:
+                    <h4 className="text-sm font-bold font-mono text-slate-900 uppercase tracking-wider mb-4 flex items-center gap-2">
+                      <Sparkles className="w-4 h-4 text-[#FF6B00]" />
+                      <span>We help organizations:</span>
                     </h4>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                       {[
                         'Translate subsurface concepts and workflows into spatial data models',
                         'Structure seismic, well, geological and interpretation datasets for GIS environments',
@@ -269,18 +271,24 @@ export function OilAndGas() {
                         'Automate repetitive data preparation and spatial processing workflows',
                         'Connect subsurface information with broader enterprise geospatial datasets'
                       ].map((item, idx) => (
-                        <div key={idx} className="flex items-start gap-3 text-sm text-slate-700 font-medium">
-                          <CheckCircle2 className="w-4 h-4 text-[#FF6B00] shrink-0 mt-1" />
-                          <span>{item}</span>
-                        </div>
+                        <motion.div 
+                          key={idx}
+                          whileHover={shouldReduceMotion ? {} : { x: 6 }}
+                          className="flex items-start gap-3 text-sm text-slate-700 font-medium group/item"
+                        >
+                          <div className="w-5 h-5 rounded-full bg-orange-100/80 border border-[#FF6B00]/40 flex items-center justify-center text-[#FF6B00] shrink-0 mt-0.5 group-hover/item:bg-[#FF6B00] group-hover/item:text-white transition-colors">
+                            <CheckCircle2 className="w-3.5 h-3.5" />
+                          </div>
+                          <span className="group-hover/item:text-[#FF6B00] transition-colors">{item}</span>
+                        </motion.div>
                       ))}
                     </div>
                   </div>
 
                   {/* Result Callout */}
-                  <div className="p-4 rounded-xl bg-orange-50/70 border border-[#FF6B00]/30 flex items-center gap-3">
-                    <span className="text-xs font-mono font-bold text-[#FF6B00] uppercase shrink-0">RESULT:</span>
-                    <span className="text-sm text-slate-800 font-semibold">
+                  <div className="p-5 rounded-2xl bg-gradient-to-r from-orange-50/90 via-amber-50/60 to-orange-50/90 border-2 border-[#FF6B00]/30 shadow-md group-hover:border-[#FF6B00]/60 transition-all flex items-center gap-3">
+                    <span className="px-2.5 py-1 rounded-md bg-[#FF6B00] text-white text-xs font-mono font-bold uppercase shrink-0 shadow-xs">RESULT</span>
+                    <span className="text-sm text-slate-900 font-semibold">
                       A clear connection between subsurface interpretation and the spatial information used across the wider organization.
                     </span>
                   </div>
@@ -288,7 +296,7 @@ export function OilAndGas() {
                   {/* Animated Keywords Chips */}
                   <div className="pt-2">
                     <span className="text-xs font-mono text-slate-500 block mb-2.5">KEYWORD CAPABILITIES:</span>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-2.5">
                       {[
                         'Seismic Interpretation',
                         'Well & Log Data',
@@ -298,8 +306,8 @@ export function OilAndGas() {
                       ].map((kw) => (
                         <motion.span
                           key={kw}
-                          whileHover={shouldReduceMotion ? {} : { scale: 1.05 }}
-                          className="px-3.5 py-1.5 rounded-lg text-xs font-mono bg-slate-100 border border-slate-200 text-slate-700 font-medium hover:border-[#FF6B00]/50 transition-colors"
+                          whileHover={shouldReduceMotion ? {} : { scale: 1.08, y: -2 }}
+                          className="px-4 py-2 rounded-xl text-xs font-mono bg-white border-2 border-slate-200 text-slate-800 font-bold hover:border-[#FF6B00] hover:text-[#FF6B00] hover:shadow-md hover:shadow-[#FF6B00]/10 transition-all cursor-pointer"
                         >
                           {kw}
                         </motion.span>
@@ -314,20 +322,20 @@ export function OilAndGas() {
 
           {/* SERVICE 02 */}
           <Reveal yOffset={30}>
-            <SpotlightCard className="p-8 sm:p-12 border-slate-200 bg-white shadow-xl">
+            <SpotlightCard className="p-8 sm:p-12 border-slate-200 bg-white">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 
                 <div className="lg:col-span-2">
-                  <span className="text-6xl sm:text-7xl font-extrabold font-heading text-slate-200 block select-none">
+                  <span className="text-6xl sm:text-7xl font-extrabold font-heading bg-gradient-to-br from-[#FF6B00] via-[#FF8800] to-slate-300 bg-clip-text text-transparent block select-none group-hover:scale-105 transition-transform">
                     02
                   </span>
-                  <div className="inline-block mt-2 text-xs font-mono font-bold text-[#FF6B00] uppercase tracking-wider">
+                  <div className="inline-block mt-2 px-3 py-1 rounded-full bg-orange-50 border border-[#FF6B00]/30 text-xs font-mono font-bold text-[#FF6B00] uppercase tracking-wider">
                     MULTIDISCIPLINARY DELIVERY
                   </div>
                 </div>
 
                 <div className="lg:col-span-10 space-y-6">
-                  <h3 className="text-2xl sm:text-3xl font-bold font-heading text-slate-900">
+                  <h3 className="text-2xl sm:text-3xl font-bold font-heading text-slate-900 group-hover:text-[#FF6B00] transition-colors">
                     Scalable Operations & Delivery
                   </h3>
 
@@ -336,10 +344,11 @@ export function OilAndGas() {
                   </p>
 
                   <div className="pt-2">
-                    <h4 className="text-sm font-bold font-mono text-slate-900 uppercase tracking-wider mb-4">
-                      Our capabilities include:
+                    <h4 className="text-sm font-bold font-mono text-slate-900 uppercase tracking-wider mb-4 flex items-center gap-2">
+                      <Sparkles className="w-4 h-4 text-[#FF6B00]" />
+                      <span>Our capabilities include:</span>
                     </h4>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                       {[
                         'Multidisciplinary team leadership and coordination',
                         'Data architecture and information modelling',
@@ -350,18 +359,24 @@ export function OilAndGas() {
                         'Delivery models designed for mid-tier and major Oil & Gas operators',
                         'Transitioning from project-based data management to sustainable operational capabilities'
                       ].map((item, idx) => (
-                        <div key={idx} className="flex items-start gap-3 text-sm text-slate-700 font-medium">
-                          <CheckCircle2 className="w-4 h-4 text-[#FF6B00] shrink-0 mt-1" />
-                          <span>{item}</span>
-                        </div>
+                        <motion.div 
+                          key={idx}
+                          whileHover={shouldReduceMotion ? {} : { x: 6 }}
+                          className="flex items-start gap-3 text-sm text-slate-700 font-medium group/item"
+                        >
+                          <div className="w-5 h-5 rounded-full bg-orange-100/80 border border-[#FF6B00]/40 flex items-center justify-center text-[#FF6B00] shrink-0 mt-0.5 group-hover/item:bg-[#FF6B00] group-hover/item:text-white transition-colors">
+                            <CheckCircle2 className="w-3.5 h-3.5" />
+                          </div>
+                          <span className="group-hover/item:text-[#FF6B00] transition-colors">{item}</span>
+                        </motion.div>
                       ))}
                     </div>
                   </div>
 
                   {/* Callout */}
-                  <div className="p-4 rounded-xl bg-orange-50/70 border border-[#FF6B00]/30 flex items-center gap-3">
-                    <span className="text-xs font-mono font-bold text-[#FF6B00] uppercase shrink-0">FOCUS:</span>
-                    <span className="text-sm text-slate-800 font-semibold">
+                  <div className="p-5 rounded-2xl bg-gradient-to-r from-orange-50/90 via-amber-50/60 to-orange-50/90 border-2 border-[#FF6B00]/30 shadow-md group-hover:border-[#FF6B00]/60 transition-all flex items-center gap-3">
+                    <span className="px-2.5 py-1 rounded-md bg-[#FF6B00] text-white text-xs font-mono font-bold uppercase shrink-0 shadow-xs">FOCUS</span>
+                    <span className="text-sm text-slate-900 font-semibold">
                       We focus on building delivery models that can scale across assets, regions, disciplines and business units while maintaining consistency and data quality.
                     </span>
                   </div>
@@ -369,12 +384,12 @@ export function OilAndGas() {
                   {/* Animated Keywords Chips */}
                   <div className="pt-2">
                     <span className="text-xs font-mono text-slate-500 block mb-2.5">SCALING SCOPE:</span>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-2.5">
                       {['Assets', 'Regions', 'Disciplines', 'Business Units'].map((kw) => (
                         <motion.span
                           key={kw}
-                          whileHover={shouldReduceMotion ? {} : { scale: 1.05 }}
-                          className="px-3.5 py-1.5 rounded-lg text-xs font-mono bg-slate-100 border border-slate-200 text-slate-700 font-medium hover:border-[#FF6B00]/50 transition-colors"
+                          whileHover={shouldReduceMotion ? {} : { scale: 1.08, y: -2 }}
+                          className="px-4 py-2 rounded-xl text-xs font-mono bg-white border-2 border-slate-200 text-slate-800 font-bold hover:border-[#FF6B00] hover:text-[#FF6B00] hover:shadow-md hover:shadow-[#FF6B00]/10 transition-all cursor-pointer"
                         >
                           {kw}
                         </motion.span>
@@ -389,20 +404,20 @@ export function OilAndGas() {
 
           {/* SERVICE 03 */}
           <Reveal yOffset={30}>
-            <SpotlightCard className="p-8 sm:p-12 border-slate-200 bg-white shadow-xl">
+            <SpotlightCard className="p-8 sm:p-12 border-slate-200 bg-white">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 
                 <div className="lg:col-span-2">
-                  <span className="text-6xl sm:text-7xl font-extrabold font-heading text-slate-200 block select-none">
+                  <span className="text-6xl sm:text-7xl font-extrabold font-heading bg-gradient-to-br from-[#FF6B00] via-[#FF8800] to-slate-300 bg-clip-text text-transparent block select-none group-hover:scale-105 transition-transform">
                     03
                   </span>
-                  <div className="inline-block mt-2 text-xs font-mono font-bold text-[#FF6B00] uppercase tracking-wider">
+                  <div className="inline-block mt-2 px-3 py-1 rounded-full bg-orange-50 border border-[#FF6B00]/30 text-xs font-mono font-bold text-[#FF6B00] uppercase tracking-wider">
                     CLOUD ARCHITECTURE
                   </div>
                 </div>
 
                 <div className="lg:col-span-10 space-y-6">
-                  <h3 className="text-2xl sm:text-3xl font-bold font-heading text-slate-900">
+                  <h3 className="text-2xl sm:text-3xl font-bold font-heading text-slate-900 group-hover:text-[#FF6B00] transition-colors">
                     Modern Spatial Data Infrastructure
                   </h3>
 
@@ -411,10 +426,11 @@ export function OilAndGas() {
                   </p>
 
                   <div className="pt-2">
-                    <h4 className="text-sm font-bold font-mono text-slate-900 uppercase tracking-wider mb-4">
-                      Our work can include:
+                    <h4 className="text-sm font-bold font-mono text-slate-900 uppercase tracking-wider mb-4 flex items-center gap-2">
+                      <Sparkles className="w-4 h-4 text-[#FF6B00]" />
+                      <span>Our work can include:</span>
                     </h4>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                       {[
                         'Modernizing legacy subsurface and spatial datasets',
                         'Designing cloud-ready spatial data architectures',
@@ -425,18 +441,24 @@ export function OilAndGas() {
                         'Supporting enterprise GIS and cloud adoption',
                         'Creating automated workflows for data refresh, validation and distribution'
                       ].map((item, idx) => (
-                        <div key={idx} className="flex items-start gap-3 text-sm text-slate-700 font-medium">
-                          <CheckCircle2 className="w-4 h-4 text-[#FF6B00] shrink-0 mt-1" />
-                          <span>{item}</span>
-                        </div>
+                        <motion.div 
+                          key={idx}
+                          whileHover={shouldReduceMotion ? {} : { x: 6 }}
+                          className="flex items-start gap-3 text-sm text-slate-700 font-medium group/item"
+                        >
+                          <div className="w-5 h-5 rounded-full bg-orange-100/80 border border-[#FF6B00]/40 flex items-center justify-center text-[#FF6B00] shrink-0 mt-0.5 group-hover/item:bg-[#FF6B00] group-hover/item:text-white transition-colors">
+                            <CheckCircle2 className="w-3.5 h-3.5" />
+                          </div>
+                          <span className="group-hover/item:text-[#FF6B00] transition-colors">{item}</span>
+                        </motion.div>
                       ))}
                     </div>
                   </div>
 
                   {/* Callout */}
-                  <div className="p-4 rounded-xl bg-orange-50/70 border border-[#FF6B00]/30 flex items-center gap-3">
-                    <span className="text-xs font-mono font-bold text-[#FF6B00] uppercase shrink-0">OBJECTIVE:</span>
-                    <span className="text-sm text-slate-800 font-semibold">
+                  <div className="p-5 rounded-2xl bg-gradient-to-r from-orange-50/90 via-amber-50/60 to-orange-50/90 border-2 border-[#FF6B00]/30 shadow-md group-hover:border-[#FF6B00]/60 transition-all flex items-center gap-3">
+                    <span className="px-2.5 py-1 rounded-md bg-[#FF6B00] text-white text-xs font-mono font-bold uppercase shrink-0 shadow-xs">OBJECTIVE</span>
+                    <span className="text-sm text-slate-900 font-semibold">
                       The objective is to move from static maps and disconnected datasets to dynamic, governed and reusable spatial information.
                     </span>
                   </div>
@@ -493,8 +515,8 @@ export function OilAndGas() {
                   <Reveal key={node.id} delay={index * 0.1} yOffset={20}>
                     <div className="relative z-10 flex flex-col items-center text-center group">
                       <motion.div 
-                        whileHover={shouldReduceMotion ? {} : { scale: 1.08 }}
-                        className="w-16 h-16 rounded-2xl bg-slate-900 border border-slate-700 group-hover:border-[#FF6B00] flex items-center justify-center text-[#FF6B00] shadow-xl transition-all mb-4"
+                        whileHover={shouldReduceMotion ? {} : { scale: 1.12, rotate: 6 }}
+                        className="w-16 h-16 rounded-2xl bg-slate-900 border-2 border-slate-700 group-hover:border-[#FF6B00] flex items-center justify-center text-[#FF6B00] shadow-xl group-hover:shadow-[0_0_30px_rgba(255,107,0,0.3)] transition-all mb-4"
                       >
                         <IconComponent className="w-7 h-7" />
                       </motion.div>
@@ -555,7 +577,7 @@ export function OilAndGas() {
 
 
       {/* ------------------------------------------------------------- */}
-      {/* 05 — WHY INOVAANTAGE (BENTO GRID) */}
+      {/* 05 — WHY INOVAANTAGE (BENTO GRID WITH 3D TILT CARDS) */}
       {/* ------------------------------------------------------------- */}
       <section className="py-24 lg:py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         
@@ -576,12 +598,12 @@ export function OilAndGas() {
             const IconComp = pillar.icon;
             return (
               <Reveal key={pillar.title} delay={index * 0.1} yOffset={20} className={pillar.colSpan}>
-                <SpotlightCard className="p-8 h-full flex flex-col justify-between border-slate-200 bg-white shadow-xl">
+                <SpotlightCard className="p-8 h-full flex flex-col justify-between border-slate-200 bg-white">
                   <div>
-                    <div className="w-12 h-12 rounded-2xl bg-orange-50 border border-[#FF6B00]/30 flex items-center justify-center text-[#FF6B00] mb-6 shadow-xs">
-                      <IconComp className="w-6 h-6" />
+                    <div className="w-14 h-14 rounded-2xl bg-orange-50 border-2 border-[#FF6B00]/30 flex items-center justify-center text-[#FF6B00] mb-6 shadow-xs group-hover:scale-110 group-hover:rotate-6 transition-transform">
+                      <IconComp className="w-7 h-7" />
                     </div>
-                    <h3 className="text-2xl font-bold font-heading text-slate-900 mb-3">
+                    <h3 className="text-2xl font-bold font-heading text-slate-900 mb-3 group-hover:text-[#FF6B00] transition-colors">
                       {pillar.title}
                     </h3>
                     <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
@@ -618,7 +640,7 @@ export function OilAndGas() {
             
             {/* BEFORE PANEL */}
             <Reveal delay={0.1} yOffset={20}>
-              <div className="p-8 rounded-3xl bg-white border border-rose-200 shadow-lg h-full space-y-6">
+              <SpotlightCard className="p-8 border-rose-200 bg-white h-full space-y-6">
                 <div className="flex items-center gap-3">
                   <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-rose-50 text-rose-700 border border-rose-200">
                     TRADITIONAL ENVIRONMENT
@@ -629,18 +651,22 @@ export function OilAndGas() {
 
                 <div className="space-y-3 font-mono text-sm">
                   {['Static maps', 'Disconnected datasets', 'Manual workflows', 'Fragmented information'].map((item) => (
-                    <div key={item} className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-600 flex items-center gap-3">
+                    <motion.div 
+                      key={item} 
+                      whileHover={{ x: 4 }}
+                      className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-600 flex items-center gap-3"
+                    >
                       <span className="w-2 h-2 rounded-full bg-rose-500" />
                       <span>{item}</span>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
-              </div>
+              </SpotlightCard>
             </Reveal>
 
             {/* AFTER PANEL */}
             <Reveal delay={0.2} yOffset={20}>
-              <div className="p-8 rounded-3xl bg-white border border-[#FF6B00]/40 shadow-xl h-full space-y-6">
+              <SpotlightCard className="p-8 border-[#FF6B00]/40 bg-white h-full space-y-6">
                 <div className="flex items-center gap-3">
                   <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-orange-50 text-[#FF6B00] border border-[#FF6B00]/30">
                     MODERN SPATIAL DATA ENVIRONMENT
@@ -651,20 +677,24 @@ export function OilAndGas() {
 
                 <div className="space-y-3 font-mono text-sm">
                   {['Dynamic spatial information', 'Connected datasets', 'Automated workflows', 'Governed enterprise data'].map((item) => (
-                    <div key={item} className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-emerald-700 flex items-center gap-3">
+                    <motion.div 
+                      key={item} 
+                      whileHover={{ x: 4 }}
+                      className="p-3.5 rounded-xl bg-orange-50/60 border border-[#FF6B00]/30 text-emerald-800 flex items-center gap-3"
+                    >
                       <CheckCircle2 className="w-4 h-4 text-emerald-600" />
                       <span className="font-semibold">{item}</span>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
-              </div>
+              </SpotlightCard>
             </Reveal>
 
           </div>
 
           {/* Visual Metaphor Bar */}
           <Reveal delay={0.3} yOffset={20}>
-            <div className="mt-12 p-4 rounded-2xl bg-white border border-slate-200 shadow-md flex flex-wrap items-center justify-around gap-4 font-mono text-xs text-center">
+            <div className="mt-12 p-4 rounded-2xl bg-white border-2 border-slate-200 shadow-md flex flex-wrap items-center justify-around gap-4 font-mono text-xs text-center">
               <span className="text-slate-500 font-bold">STATIC MAP</span>
               <span className="text-[#FF6B00] font-bold">→</span>
               <span className="text-[#0284C7] font-bold">DATA CONNECTION</span>
@@ -714,7 +744,7 @@ export function OilAndGas() {
       {/* ------------------------------------------------------------- */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <Reveal yOffset={20}>
-          <div className="p-10 sm:p-16 rounded-3xl bg-white border border-slate-200 shadow-2xl relative overflow-hidden text-center space-y-8">
+          <div className="p-10 sm:p-16 rounded-3xl bg-white border-2 border-slate-200 shadow-2xl relative overflow-hidden text-center space-y-8">
             
             {/* Background Ambient Radial Glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-radial from-[#FF6B00]/10 via-amber-500/05 to-transparent blur-3xl pointer-events-none" />
