@@ -217,7 +217,7 @@ export function OilAndGas() {
 
 
       {/* ------------------------------------------------------------- */}
-      {/* 03 — OIL & GAS CONSULTING SERVICES WITH 3D LAYERED MOTION CARDS */}
+      {/* 03 — OIL & GAS CONSULTING SERVICES WITH STICKY CARD STACKING SCROLL ANIMATION */}
       {/* ------------------------------------------------------------- */}
       <section id="services" className="py-24 lg:py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         
@@ -232,11 +232,12 @@ export function OilAndGas() {
           </div>
         </Reveal>
 
-        <div className="space-y-16">
+        {/* STICKY CARD STACK CONTAINER */}
+        <div className="relative space-y-12 pb-16">
           
-          {/* SERVICE 01 */}
-          <Reveal yOffset={30}>
-            <SpotlightCard className="p-8 sm:p-12 border-slate-200 bg-white">
+          {/* SERVICE CARD 01 STICKY STACK */}
+          <div className="sticky top-28 md:top-32 z-10 transition-all duration-300">
+            <SpotlightCard className="p-8 sm:p-12 border-2 border-slate-200 bg-white shadow-2xl">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 
                 <div className="lg:col-span-2">
@@ -318,11 +319,11 @@ export function OilAndGas() {
                 </div>
               </div>
             </SpotlightCard>
-          </Reveal>
+          </div>
 
-          {/* SERVICE 02 */}
-          <Reveal yOffset={30}>
-            <SpotlightCard className="p-8 sm:p-12 border-slate-200 bg-white">
+          {/* SERVICE CARD 02 STICKY STACK */}
+          <div className="sticky top-32 md:top-40 z-20 transition-all duration-300">
+            <SpotlightCard className="p-8 sm:p-12 border-2 border-slate-200 bg-white shadow-2xl">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 
                 <div className="lg:col-span-2">
@@ -400,11 +401,11 @@ export function OilAndGas() {
                 </div>
               </div>
             </SpotlightCard>
-          </Reveal>
+          </div>
 
-          {/* SERVICE 03 */}
-          <Reveal yOffset={30}>
-            <SpotlightCard className="p-8 sm:p-12 border-slate-200 bg-white">
+          {/* SERVICE CARD 03 STICKY STACK */}
+          <div className="sticky top-36 md:top-48 z-30 transition-all duration-300">
+            <SpotlightCard className="p-8 sm:p-12 border-2 border-slate-200 bg-white shadow-2xl">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 
                 <div className="lg:col-span-2">
@@ -466,7 +467,7 @@ export function OilAndGas() {
                 </div>
               </div>
             </SpotlightCard>
-          </Reveal>
+          </div>
 
         </div>
       </section>
